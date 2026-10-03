@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { HeartPulse, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { HOSPITAL_INFO, FOOTER_QUICK_LINKS, FOOTER_HOSPITAL_LINKS } from "@/lib/constants";
 import { EmergencyButton } from "@/components/ui/emergency-button";
 import type { SupportedLocale } from "@/lib/i18n/config";
@@ -19,9 +20,15 @@ function FooterLogo({
     : hospitalName;
 
   return (
-    <Link href={`/${locale}`} className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shrink-0">
-        <HeartPulse className="w-5 h-5" aria-hidden />
+    <Link href={`/${locale}`} className="flex items-center gap-3 group">
+      <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-white shadow-sm border border-white/20 transition-transform group-hover:scale-105">
+        <Image
+          src="/logo.png"
+          alt={hospitalName}
+          width={40}
+          height={40}
+          className="w-full h-full object-contain"
+        />
       </div>
       <div className="flex flex-col leading-none">
         <span className="font-bold text-base text-white">{mainName || hospitalName}</span>

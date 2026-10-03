@@ -2,9 +2,9 @@
 
 import React, { useState, useTransition } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { requestPasswordResetAction } from "@/lib/actions/auth";
 import {
-  Cross,
   Mail,
   ArrowRight,
   ArrowLeft,
@@ -60,8 +60,15 @@ export default function ForgotPasswordPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         {/* Hospital Brand Badge */}
         <div className="flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white shadow-cta">
-            <Cross className="h-8 w-8 rotate-45" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full overflow-hidden shadow-cta ring-4 ring-primary/10 bg-white">
+            <Image
+              src="/logo.png"
+              alt="Medhen Beza Hospital"
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
         </div>
 

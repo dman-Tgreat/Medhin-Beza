@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAdminRole } from "./role-context";
@@ -25,7 +26,6 @@ import {
   History,
   Settings,
   X,
-  Cross,
   LogOut,
   ChevronLeft,
   ChevronRight,
@@ -107,8 +107,14 @@ export function AdminSidebar({
             className="flex items-center gap-3 group focus:outline-none min-w-0"
             title={`${hospitalName} CMS`}
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-cta transition-transform group-hover:scale-105">
-              <Cross className="h-5 w-5 rotate-45" />
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full overflow-hidden shadow-sm transition-transform group-hover:scale-105 border border-primary/20 bg-white">
+              <Image
+                src="/logo.png"
+                alt={hospitalName}
+                width={36}
+                height={36}
+                className="w-full h-full object-contain"
+              />
             </div>
             {!collapsed && (
               <div className="flex flex-col min-w-0">

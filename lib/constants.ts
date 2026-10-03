@@ -16,6 +16,7 @@ export const HOSPITAL_INFO = {
   address: "H73F+R49, Adama, Ethiopia",
   plusCode: "H73F+R49, Adama",
   hours: "24/7 Emergency & Inpatient Services",
+  logo: "/logo.png",
 };
 
 // ─── Public Site Navigation ───────────────────────────────────────────────────

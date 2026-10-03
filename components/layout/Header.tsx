@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
-import { HeartPulse, Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -74,8 +75,15 @@ function Logo({
       className="flex items-center gap-2.5 group shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
       aria-label={`${hospitalName} — ${t("nav.home") || "home"}`}
     >
-      <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-cta group-hover:bg-primary-dark transition-colors">
-        <HeartPulse className="w-5 h-5" aria-hidden />
+      <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 border border-primary/10 bg-white">
+        <Image
+          src="/logo.png"
+          alt={hospitalName}
+          width={40}
+          height={40}
+          className="w-full h-full object-contain"
+          priority
+        />
       </div>
       <div className="flex flex-col leading-none">
         <span className="font-extrabold text-lg tracking-tight text-text">

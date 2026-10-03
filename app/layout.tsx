@@ -37,6 +37,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/${locale}`,
     },
     twitter: { card: "summary" },
+    icons: {
+      icon: [
+        { url: "/icon.png", type: "image/png" },
+        { url: "/logo.png", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    },
   };
 }
 
