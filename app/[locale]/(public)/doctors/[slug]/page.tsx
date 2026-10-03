@@ -119,17 +119,19 @@ export default async function DoctorProfilePage({ params }: DoctorPageProps) {
           <div className="lg:col-span-4">
             <div className="bg-surface rounded-2xl border border-border p-6 shadow-sm sticky top-24 space-y-6">
               {/* Doctor Portrait */}
-              <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary-light bg-background">
+              <div className="relative w-52 h-52 sm:w-60 sm:h-60 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg ring-4 ring-primary/15 bg-background">
                 {doctor.photo ? (
                   <Image
                     src={doctor.photo}
                     alt={doctor.name}
                     fill
+                    priority
                     className="object-cover"
+                    sizes="(max-width: 640px) 208px, 240px"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-secondary-light/30">
-                    <UserCircle2 className="h-20 w-20 text-primary/40" />
+                    <UserCircle2 className="h-28 w-28 text-primary/40" strokeWidth={1} />
                   </div>
                 )}
               </div>

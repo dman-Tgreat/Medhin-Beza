@@ -20,19 +20,19 @@ function FooterLogo({
     : hospitalName;
 
   return (
-    <Link href={`/${locale}`} className="flex items-center gap-3 group">
-      <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-white shadow-sm border border-white/20 transition-transform group-hover:scale-105">
+    <Link href={`/${locale}`} className="flex items-center gap-3.5 group">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-white shadow-md border-2 border-white/20 transition-transform group-hover:scale-105 p-1">
         <Image
           src="/logo.png"
           alt={hospitalName}
-          width={40}
-          height={40}
+          width={112}
+          height={112}
           className="w-full h-full object-contain"
         />
       </div>
-      <div className="flex flex-col leading-none">
-        <span className="font-bold text-base text-white">{mainName || hospitalName}</span>
-        <span className="text-[10px] font-semibold text-primary-light tracking-[0.12em] uppercase">
+      <div className="flex flex-col leading-tight">
+        <span className="font-extrabold text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white tracking-tight">{mainName || hospitalName}</span>
+        <span className="text-xs lg:text-sm font-bold text-primary-light tracking-[0.14em] uppercase">
           {hasHospital ? "Hospital" : "Medical Care"}
         </span>
       </div>
@@ -83,7 +83,7 @@ function ContactRow({
 }) {
   return (
     <div className="flex items-start gap-3 text-sm text-slate-400">
-      <Icon className="w-4 h-4 text-primary-light shrink-0 mt-0.5" aria-hidden />
+      <Icon className="w-5 h-5 text-primary-light shrink-0 mt-0.5" aria-hidden />
       <span>{children}</span>
     </div>
   );

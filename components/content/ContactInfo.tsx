@@ -54,14 +54,14 @@ function ContactRow({ icon: Icon, label, value, compact, accent, href }: RowProp
       {/* Icon */}
       <div
         className={cn(
-          "shrink-0 rounded-md flex items-center justify-center",
-          compact ? "w-7 h-7 mt-0.5" : "w-9 h-9",
+          "shrink-0 rounded-lg flex items-center justify-center shadow-xs",
+          compact ? "w-8 h-8 mt-0.5" : "w-11 h-11",
           isEmergency
             ? "bg-emergency-light text-emergency"
             : "bg-primary-light text-primary"
         )}
       >
-        <Icon className={cn(compact ? "w-3.5 h-3.5" : "w-4.5 h-4.5")} strokeWidth={1.75} aria-hidden />
+        <Icon className={cn(compact ? "w-4.5 h-4.5" : "w-6 h-6")} strokeWidth={2} aria-hidden />
       </div>
 
       {/* Text */}

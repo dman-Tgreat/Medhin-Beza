@@ -151,10 +151,10 @@ export function DoctorsAdminClient({ initialDoctors, departments }: DoctorsAdmin
             <img
               src={item.profilePhoto}
               alt={item.fullName}
-              className="h-10 w-10 rounded-full object-cover border border-border shrink-0"
+              className="h-14 w-14 rounded-full object-cover border-2 border-primary/20 shadow-sm shrink-0"
             />
           ) : (
-            <div className="h-10 w-10 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold text-xs shrink-0">
+            <div className="h-14 w-14 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold text-sm shrink-0">
               {item.fullName.slice(0, 2).toUpperCase()}
             </div>
           )}

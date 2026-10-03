@@ -72,24 +72,24 @@ function Logo({
   return (
     <Link
       href={`/${locale}`}
-      className="flex items-center gap-2.5 group shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
+      className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 xl:gap-4 group shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
       aria-label={`${hospitalName} — ${t("nav.home") || "home"}`}
     >
-      <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 border border-primary/10 bg-white">
+      <div className="w-100 h-100 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 border-2 lg:border-3 border-primary/20 bg-white p-0.5 sm:p-1">
         <Image
           src="/logo.png"
           alt={hospitalName}
-          width={40}
-          height={40}
+          width={112}
+          height={112}
           className="w-full h-full object-contain"
           priority
         />
       </div>
-      <div className="flex flex-col leading-none">
-        <span className="font-extrabold text-lg tracking-tight text-text">
+      <div className="flex flex-col leading-tight">
+        <span className="font-extrabold text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-[2rem] tracking-tight text-text">
           {mainName || hospitalName}
         </span>
-        <span className="text-[10px] font-semibold text-primary tracking-[0.12em] uppercase">
+        <span className="text-xs sm:text-xs lg:text-sm xl:text-base font-bold text-primary tracking-[0.14em] uppercase">
           {subtitle}
         </span>
       </div>
@@ -220,15 +220,15 @@ export function Header({
           "bg-surface/95 backdrop-blur-md border-b border-border shadow-nav"
         )}
       >
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[72px] lg:h-[80px]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="flex items-center justify-between min-h-[74px] sm:min-h-[82px] lg:min-h-[96px] xl:min-h-[112px] 2xl:min-h-[120px] py-2">
             {/* Logo — always visible */}
             <Logo hospitalName={settings?.hospitalName} locale={effectiveLocale} />
 
             {/* Desktop nav — hidden on mobile */}
             <nav
               aria-label="Primary navigation"
-              className="hidden lg:flex items-center gap-6"
+              className="hidden lg:flex items-center gap-5 xl:gap-7"
             >
               {PRIMARY_NAV_LINKS.map((link) => {
                 const label = NAV_TRANSLATION_KEYS[link.href] ? t(NAV_TRANSLATION_KEYS[link.href]) : link.name;
@@ -252,9 +252,12 @@ export function Header({
             </nav>
 
             {/* Right-side actions */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              {/* Language Switcher Dropdown */}
-              <LanguageSwitcher currentLocale={effectiveLocale} className="hidden sm:inline-flex" />
+            <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-4">
+              {/* Language Switcher Dropdown — visible directly on mobile and desktop for instant access */}
+              <LanguageSwitcher
+                currentLocale={effectiveLocale}
+                className="inline-flex min-h-[40px] px-2.5 sm:px-3 py-1.5 shrink-0"
+              />
 
               {/* Emergency button — always visible on desktop, hidden on mobile (accessible in drawer) */}
               <EmergencyButton
@@ -288,7 +291,7 @@ export function Header({
       </header>
 
       {/* Spacer to prevent content from sitting under fixed header */}
-      <div className="h-[72px] lg:h-[80px]" aria-hidden="true" />
+      <div className="h-[74px] sm:h-[82px] lg:h-[96px] xl:h-[112px] 2xl:h-[120px]" aria-hidden="true" />
 
       {/* Mobile Nav Drawer */}
       <MobileNav

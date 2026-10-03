@@ -48,7 +48,7 @@ const EmergencyButton = React.forwardRef<
   ) => {
     const content = (
       <>
-        {showIcon && <PhoneCall className="w-4 h-4 shrink-0" aria-hidden />}
+        {showIcon && <PhoneCall className="w-5 h-5 shrink-0" strokeWidth={2.25} aria-hidden />}
         <span>🚨 {label}</span>
         {phone && (
           <span className="font-normal opacity-90 tracking-tight">{phone}</span>

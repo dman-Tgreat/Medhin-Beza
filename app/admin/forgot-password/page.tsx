@@ -60,12 +60,12 @@ export default function ForgotPasswordPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         {/* Hospital Brand Badge */}
         <div className="flex justify-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full overflow-hidden shadow-cta ring-4 ring-primary/10 bg-white">
+          <div className="flex h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 items-center justify-center rounded-full overflow-hidden shadow-lg ring-4 ring-primary/15 bg-white p-1.5 transition-transform hover:scale-105">
             <Image
               src="/logo.png"
               alt="Medhen Beza Hospital"
-              width={64}
-              height={64}
+              width={128}
+              height={128}
               className="w-full h-full object-contain"
               priority
             />

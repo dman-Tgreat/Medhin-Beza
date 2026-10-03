@@ -4,27 +4,12 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 
 export function DoctorCardSkeleton() {
   return (
-    <Card className="overflow-hidden">
-      <CardHeader className="space-y-4">
-        <div className="flex items-center space-x-4">
-          <Skeleton className="h-16 w-16 rounded-full shrink-0" />
-          <div className="space-y-2 flex-1">
-            <Skeleton className="h-5 w-3/4" />
-            <Skeleton className="h-4 w-1/2" />
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="space-y-2">
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-5/6" />
-        <div className="flex gap-2 pt-2">
-          <Skeleton className="h-6 w-20 rounded-pill" />
-          <Skeleton className="h-6 w-24 rounded-pill" />
-        </div>
-      </CardContent>
-      <CardFooter className="pt-2">
-        <Skeleton className="h-10 w-full rounded-md" />
-      </CardFooter>
+    <Card className="overflow-hidden flex flex-col items-center p-6 text-center">
+      <Skeleton className="h-36 w-36 sm:h-44 sm:w-44 rounded-full shrink-0 my-2" />
+      <Skeleton className="h-5 w-24 rounded-full mb-3" />
+      <Skeleton className="h-6 w-3/4 mb-1.5" />
+      <Skeleton className="h-4 w-1/2 mb-4" />
+      <Skeleton className="h-8 w-28 rounded-md mt-auto" />
     </Card>
   );
 }

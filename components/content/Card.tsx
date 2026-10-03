@@ -156,7 +156,7 @@ export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>(
         {children ?? resolvedLabel}
       <svg
         aria-hidden
-        className="w-3.5 h-3.5 shrink-0 transition-transform duration-200 group-hover/link:translate-x-0.5"
+        className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-0.5"
         viewBox="0 0 16 16"
         fill="none"
         stroke="currentColor"

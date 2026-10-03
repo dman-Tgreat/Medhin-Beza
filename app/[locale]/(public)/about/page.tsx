@@ -292,8 +292,8 @@ function CoreValues({
                 "transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-primary-light flex flex-col gap-3.5"
               )}
             >
-              <div className="w-11 h-11 rounded-md bg-primary-light text-primary flex items-center justify-center shrink-0">
-                <Icon className="w-5 h-5" aria-hidden strokeWidth={2} />
+              <div className="w-14 h-14 rounded-xl bg-primary-light text-primary flex items-center justify-center shrink-0 shadow-sm">
+                <Icon className="w-7 h-7" aria-hidden strokeWidth={2} />
               </div>
               <div>
                 <h3 className="text-h4 font-bold text-text mb-1.5">

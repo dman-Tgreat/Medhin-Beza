@@ -33,18 +33,18 @@ export function DoctorCard({ data, className }: DoctorCardProps) {
     <CardRoot className={cn("group items-center text-center pt-6", className)}>
       <CardBody className="items-center">
         {/* Portrait */}
-        <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary-light bg-primary-light shrink-0">
+        <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-md ring-4 ring-primary/10 bg-primary-light shrink-0 my-2 transition-transform duration-300 group-hover:scale-105">
           {validPhoto ? (
             <Image
               src={validPhoto}
               alt={`Dr. ${data.name}`}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              sizes="96px"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 144px, 176px"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-light to-secondary-light">
-              <UserCircle2 className="w-14 h-14 text-primary/40" strokeWidth={1} />
+              <UserCircle2 className="w-20 h-20 text-primary/40" strokeWidth={1.25} />
             </div>
           )}
         </div>

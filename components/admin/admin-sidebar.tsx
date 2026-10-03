@@ -44,7 +44,7 @@ interface AdminSidebarProps {
   hospitalName?: string;
 }
 
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+const ICON_MAP: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   LayoutDashboard,
   Stethoscope,
   Building2,
@@ -97,31 +97,36 @@ export function AdminSidebar({
         {/* Hospital CMS Brand Header */}
         <div
           className={cn(
-            "flex h-[72px] lg:h-[76px] items-center border-b border-border shrink-0 transition-all",
+            "flex h-[72px] lg:h-[84px] items-center border-b border-border shrink-0 transition-all",
             collapsed ? "justify-center px-2" : "justify-between px-4"
           )}
         >
           <Link
             href="/admin"
             onClick={isMobileDrawer ? onCloseMobile : undefined}
-            className="flex items-center gap-3 group focus:outline-none min-w-0"
+            className="flex items-center gap-3.5 group focus:outline-none min-w-0"
             title={`${hospitalName} CMS`}
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full overflow-hidden shadow-sm transition-transform group-hover:scale-105 border border-primary/20 bg-white">
+            <div
+              className={cn(
+                "shrink-0 items-center justify-center rounded-full overflow-hidden shadow-sm transition-transform group-hover:scale-105 border-2 border-primary/25 bg-white p-0.5",
+                collapsed ? "flex h-11 w-11 lg:h-12 lg:w-12" : "flex h-13 w-13 sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+              )}
+            >
               <Image
                 src="/logo.png"
                 alt={hospitalName}
-                width={36}
-                height={36}
+                width={64}
+                height={64}
                 className="w-full h-full object-contain"
               />
             </div>
             {!collapsed && (
               <div className="flex flex-col min-w-0">
-                <span className="text-sm font-bold tracking-tight text-text leading-tight group-hover:text-primary transition-colors whitespace-nowrap truncate max-w-[170px]" title={hospitalName}>
+                <span className="text-base lg:text-lg font-extrabold tracking-tight text-text leading-tight group-hover:text-primary transition-colors whitespace-nowrap truncate max-w-[170px]" title={hospitalName}>
                   {brandName}
                 </span>
-                <span className="text-[10px] font-semibold text-secondary-dark tracking-wide uppercase whitespace-nowrap">
+                <span className="text-[11px] lg:text-xs font-bold text-secondary-dark tracking-wide uppercase whitespace-nowrap">
                   Hospital CMS
                 </span>
               </div>
@@ -190,7 +195,7 @@ export function AdminSidebar({
           {navGroups.map((group, gIdx) => (
             <div key={group.groupTitle || gIdx} className="space-y-1">
               {group.groupTitle && !collapsed && (
-                <h3 className="px-3 text-[10px] font-bold uppercase tracking-wider text-text-light/90 whitespace-normal break-words">
+                <h3 className="px-3 text-xs font-bold uppercase tracking-wider text-text-light/90 whitespace-normal break-words">
                   {group.groupTitle}
                 </h3>
               )}
@@ -212,14 +217,14 @@ export function AdminSidebar({
                         <Link
                           href={item.href}
                           className={cn(
-                            "flex h-10 w-10 items-center justify-center rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary",
+                            "flex h-11 w-11 items-center justify-center rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary",
                             active
                               ? "bg-primary text-white shadow-xs"
                               : "text-text-muted hover:bg-background hover:text-text"
                           )}
                           aria-label={item.title}
                         >
-                          <IconComponent className="h-5 w-5 shrink-0" />
+                          <IconComponent className="h-5.5 w-5.5 shrink-0" strokeWidth={2} />
                           {item.badge !== undefined && (
                             <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-emergency" />
                           )}
@@ -248,20 +253,21 @@ export function AdminSidebar({
                       href={item.href}
                       onClick={isMobileDrawer ? onCloseMobile : undefined}
                       className={cn(
-                        "flex items-center justify-between rounded-lg px-3 py-2.5 text-xs font-medium transition-all group min-h-[40px] focus:outline-none focus:ring-2 focus:ring-primary",
+                        "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all group min-h-[44px] focus:outline-none focus:ring-2 focus:ring-primary",
                         active
                           ? "bg-primary-light text-primary-dark font-semibold border border-primary/20 shadow-none"
                           : "text-text-muted hover:bg-background hover:text-text"
                       )}
                     >
-                      <div className="flex items-center gap-2.5 min-w-0 pr-2">
+                      <div className="flex items-center gap-3 min-w-0 pr-2">
                         <IconComponent
                           className={cn(
-                            "h-4 w-4 shrink-0 transition-colors",
+                            "h-5 w-5 shrink-0 transition-colors",
                             active
                               ? "text-primary"
                               : "text-text-light group-hover:text-primary"
                           )}
+                          strokeWidth={2}
                         />
                         <span className="break-words whitespace-normal leading-snug">
                           {item.title}
@@ -290,20 +296,20 @@ export function AdminSidebar({
         </div>
 
         {/* User Profile Footer */}
-        <div className="border-t border-border p-2.5 bg-background shrink-0">
+        <div className="border-t border-border p-3 bg-background shrink-0">
           {!collapsed ? (
             <div className="flex items-center justify-between gap-2 p-1.5 rounded-lg">
-              <div className="flex items-center gap-2.5 min-w-0">
+              <div className="flex items-center gap-3 min-w-0">
                 <img
                   src={currentUser.avatarUrl}
                   alt={currentUser.name}
-                  className="h-8 w-8 shrink-0 rounded-full object-cover border border-border"
+                  className="h-10 w-10 shrink-0 rounded-full object-cover border-2 border-primary/20 shadow-xs"
                 />
                 <div className="flex flex-col min-w-0">
-                  <span className="text-xs font-semibold text-text truncate">
+                  <span className="text-sm font-semibold text-text truncate">
                     {currentUser.name}
                   </span>
-                  <span className="text-[10px] text-text-light truncate">
+                  <span className="text-xs text-text-light truncate">
                     {currentUser.department || currentUser.roleTitle}
                   </span>
                 </div>
@@ -312,11 +318,11 @@ export function AdminSidebar({
               <Link
                 href="/admin/login"
                 onClick={logout}
-                className="min-h-[36px] min-w-[36px] flex items-center justify-center text-text-light hover:text-emergency hover:bg-emergency-light/50 rounded-md transition-colors"
+                className="min-h-[40px] min-w-[40px] flex items-center justify-center text-text-light hover:text-emergency hover:bg-emergency-light/50 rounded-lg transition-colors"
                 title="Sign out of CMS"
                 aria-label="Sign out"
               >
-                <LogOut className="h-4 w-4" />
+                <LogOut className="h-5 w-5" />
               </Link>
             </div>
           ) : (
@@ -324,17 +330,17 @@ export function AdminSidebar({
               <img
                 src={currentUser.avatarUrl}
                 alt={currentUser.name}
-                className="h-8 w-8 rounded-full object-cover border border-border"
+                className="h-9 w-9 rounded-full object-cover border-2 border-primary/20 shadow-xs"
                 title={`${currentUser.name} (${currentUser.roleTitle})`}
               />
               <Link
                 href="/admin/login"
                 onClick={logout}
-                className="h-8 w-8 flex items-center justify-center text-text-light hover:text-emergency hover:bg-emergency-light/50 rounded-md transition-colors"
+                className="h-9 w-9 flex items-center justify-center text-text-light hover:text-emergency hover:bg-emergency-light/50 rounded-md transition-colors"
                 title="Sign out of CMS"
                 aria-label="Sign out"
               >
-                <LogOut className="h-4 w-4" />
+                <LogOut className="h-4.5 w-4.5" />
               </Link>
             </div>
           )}

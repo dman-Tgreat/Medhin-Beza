@@ -337,8 +337,10 @@ export function ContactFormClient({
             <h3 className="text-h4 font-bold text-text">Direct Contact Information</h3>
 
             <div className="space-y-4 text-small">
-              <div className="flex items-start gap-3.5">
-                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-primary-light text-primary flex items-center justify-center shrink-0 shadow-xs">
+                  <MapPin className="h-6 w-6" />
+                </div>
                 <div>
                   <span className="font-semibold text-text block">Hospital Location</span>
                   <span className="text-text-muted">{settings?.address || HOSPITAL_INFO.address}</span>
@@ -350,8 +352,10 @@ export function ContactFormClient({
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5">
-                <Phone className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-primary-light text-primary flex items-center justify-center shrink-0 shadow-xs">
+                  <Phone className="h-6 w-6" />
+                </div>
                 <div>
                   <span className="font-semibold text-text block">Main Helpdesk</span>
                   <a
@@ -363,8 +367,10 @@ export function ContactFormClient({
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5">
-                <Mail className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-primary-light text-primary flex items-center justify-center shrink-0 shadow-xs">
+                  <Mail className="h-6 w-6" />
+                </div>
                 <div>
                   <span className="font-semibold text-text block">Inquiry Email</span>
                   <a
@@ -376,8 +382,10 @@ export function ContactFormClient({
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5">
-                <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-primary-light text-primary flex items-center justify-center shrink-0 shadow-xs">
+                  <Clock className="h-6 w-6" />
+                </div>
                 <div>
                   <span className="font-semibold text-text block">Outpatient Hours</span>
                   <span className="text-text-muted">{settings?.hours || HOSPITAL_INFO.hours}</span>
@@ -387,8 +395,8 @@ export function ContactFormClient({
 
             <div className="border-t border-border pt-4">
               <div className="rounded-xl bg-red-50 border border-red-200 p-4 space-y-2">
-                <span className="text-xs font-bold text-red-900 block flex items-center gap-1.5">
-                  <PhoneCall className="h-4 w-4 text-emergency" />
+                <span className="text-xs font-bold text-red-900 block flex items-center gap-2">
+                  <PhoneCall className="h-5 w-5 text-emergency" />
                   24/7 Emergency Line
                 </span>
                 <p className="text-xs text-red-800">

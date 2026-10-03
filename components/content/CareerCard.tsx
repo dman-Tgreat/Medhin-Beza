@@ -63,19 +63,19 @@ export function CareerCard({ data, className }: CareerCardProps) {
 
         {/* Meta rows */}
         <ul className="space-y-2 text-small text-text-muted">
-          <li className="flex items-center gap-2">
-            <MapPin className="w-4 h-4 shrink-0 text-text-light" aria-hidden />
-            {data.location}
+          <li className="flex items-center gap-2.5">
+            <MapPin className="w-5 h-5 shrink-0 text-primary" strokeWidth={2} aria-hidden />
+            <span>{data.location}</span>
           </li>
-          <li className="flex items-center gap-2">
-            <Briefcase className="w-4 h-4 shrink-0 text-text-light" aria-hidden />
-            {data.type}
+          <li className="flex items-center gap-2.5">
+            <Briefcase className="w-5 h-5 shrink-0 text-primary" strokeWidth={2} aria-hidden />
+            <span>{data.type}</span>
           </li>
-          <li className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 shrink-0 text-text-light" aria-hidden />
+          <li className="flex items-center gap-2.5">
+            <Calendar className="w-5 h-5 shrink-0 text-primary" strokeWidth={2} aria-hidden />
             <span>
               Deadline:{" "}
-              <span className="font-medium text-text">{data.deadline}</span>
+              <span className="font-semibold text-text">{data.deadline}</span>
             </span>
           </li>
         </ul>

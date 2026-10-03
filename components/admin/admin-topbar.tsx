@@ -2,6 +2,7 @@
 
 import React, { useState, useTransition } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAdminRole } from "./role-context";
 import {
@@ -116,7 +117,7 @@ export function AdminTopbar({
   };
 
   return (
-    <header className="sticky top-0 z-30 flex min-h-[72px] lg:min-h-[76px] py-2.5 sm:py-3 w-full items-center justify-between border-b border-border bg-surface px-3 sm:px-4 md:px-6 shadow-sm gap-3">
+    <header className="sticky top-0 z-30 flex min-h-[72px] lg:min-h-[84px] py-2.5 sm:py-3 w-full items-center justify-between border-b border-border bg-surface px-3 sm:px-4 md:px-6 shadow-sm gap-3">
       {/* Left: Mobile menu button / Desktop rail toggle & page title */}
       <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         {/* Mobile menu button (>=44px touch target) */}
@@ -127,6 +128,21 @@ export function AdminTopbar({
         >
           <Menu className="h-5 w-5" />
         </button>
+
+        {/* Mobile Hospital Logo */}
+        <Link
+          href="/admin"
+          className="md:hidden flex h-11 w-11 shrink-0 items-center justify-center rounded-full overflow-hidden border-2 border-primary/20 bg-white p-0.5 shadow-xs"
+          title="Medhen Beza Hospital CMS"
+        >
+          <Image
+            src="/logo.png"
+            alt="Medhen Beza Hospital"
+            width={44}
+            height={44}
+            className="w-full h-full object-contain"
+          />
+        </Link>
 
         {/* Tablet / Desktop rail toggle button */}
         {onToggleCollapse && (

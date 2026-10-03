@@ -128,12 +128,12 @@ function QuickActions({ locale, dict }: { locale: SupportedLocale; dict: any }) 
           >
             <div
               className={cn(
-                "w-12 h-12 rounded-md flex items-center justify-center shrink-0",
+                "w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center shrink-0 shadow-sm",
                 "transition-transform duration-200 group-hover:scale-110",
                 accent
               )}
             >
-              <Icon className="w-6 h-6" aria-hidden strokeWidth={1.75} />
+              <Icon className="w-7 h-7 sm:w-8 sm:h-8" aria-hidden strokeWidth={2} />
             </div>
             <div>
               <p className="text-small font-semibold text-text leading-tight">{label}</p>
@@ -289,7 +289,7 @@ function EmergencyCTA({ phone, locale, dict }: { phone: string; locale: Supporte
             aria-label={`Call emergency line: ${phone}`}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-small font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer select-none h-12 sm:h-14 px-6 text-body w-full sm:w-auto bg-emergency text-white hover:bg-emergency/90 tracking-wide"
           >
-            <PhoneCall className="w-4 h-4 shrink-0" aria-hidden />
+            <PhoneCall className="w-5 h-5 shrink-0" strokeWidth={2.25} aria-hidden />
             <span>🚨 {dict.home?.ambulanceCall || "Emergency Line"}</span>
             <span className="font-normal opacity-90 tracking-tight">{phone}</span>
           </a>

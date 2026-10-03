@@ -34,13 +34,13 @@ export function ServiceCard({ data, className }: ServiceCardProps) {
         {/* Icon swatch */}
         <div
           className={cn(
-            "w-12 h-12 rounded-md flex items-center justify-center shrink-0",
+            "w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center shrink-0 shadow-sm",
             "bg-primary-light text-primary",
             "transition-colors duration-200",
             "group-hover:bg-primary group-hover:text-white"
           )}
         >
-          <Icon className="w-6 h-6" strokeWidth={1.75} aria-hidden />
+          <Icon className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2} aria-hidden />
         </div>
 
         {/* Name */}
