@@ -71,7 +71,7 @@ export default function ResetPasswordPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         {/* Hospital Brand Badge */}
         <div className="flex justify-center">
-          <div className="flex h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 items-center justify-center rounded-full overflow-hidden shadow-lg ring-4 ring-primary/15 bg-white p-1.5 transition-transform hover:scale-105">
+          <div className="flex w-[88px] h-[88px] sm:w-[96px] sm:h-[96px] lg:w-[108px] lg:h-[108px] items-center justify-center rounded-full overflow-hidden shadow-lg ring-4 ring-primary/15 bg-white p-1.5 transition-transform hover:scale-105">
             <Image
               src="/logo.png"
               alt="Medhen Beza Hospital"

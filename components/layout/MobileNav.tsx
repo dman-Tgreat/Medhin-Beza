@@ -100,20 +100,20 @@ export function MobileNav({ isOpen, onClose, settings, currentLocale }: MobileNa
             onClick={onClose}
             className="flex items-center gap-3 min-w-0 group"
           >
-            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shrink-0 border-2 border-primary/20 bg-white p-0.5 shadow-xs">
+            <div className="w-[48px] h-[48px] rounded-full overflow-hidden flex items-center justify-center shrink-0 border-2 border-primary/20 bg-white p-0.5 shadow-xs">
               <Image
                 src="/logo.png"
                 alt={settings?.hospitalName || "Hospital Logo"}
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="flex flex-col min-w-0 leading-tight">
-              <span className="font-extrabold text-sm text-text truncate">
+              <span className="font-extrabold text-base text-text truncate">
                 {settings?.hospitalName || "Medhen Beza"}
               </span>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
+              <span className="text-[11px] font-bold text-primary uppercase tracking-wider">
                 Hospital
               </span>
             </div>

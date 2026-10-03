@@ -75,21 +75,21 @@ function Logo({
       className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 xl:gap-4 group shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
       aria-label={`${hospitalName} — ${t("nav.home") || "home"}`}
     >
-      <div className="w-100 h-100 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 border-2 lg:border-3 border-primary/20 bg-white p-0.5 sm:p-1">
+      <div className="w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] lg:w-[68px] lg:h-[68px] xl:w-[76px] xl:h-[76px] 2xl:w-[82px] 2xl:h-[82px] rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 border-2 lg:border-[2.5px] border-primary/20 bg-white p-0.5 sm:p-1">
         <Image
           src="/logo.png"
           alt={hospitalName}
-          width={112}
-          height={112}
+          width={160}
+          height={160}
           className="w-full h-full object-contain"
           priority
         />
       </div>
       <div className="flex flex-col leading-tight">
-        <span className="font-extrabold text-lg sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-[2rem] tracking-tight text-text">
+        <span className="font-extrabold text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] 2xl:text-[2rem] tracking-tight text-text">
           {mainName || hospitalName}
         </span>
-        <span className="text-xs sm:text-xs lg:text-sm xl:text-base font-bold text-primary tracking-[0.14em] uppercase">
+        <span className="text-[11px] sm:text-xs lg:text-xs xl:text-sm font-bold text-primary tracking-[0.14em] uppercase">
           {subtitle}
         </span>
       </div>
@@ -221,14 +221,14 @@ export function Header({
         )}
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="flex items-center justify-between min-h-[74px] sm:min-h-[82px] lg:min-h-[96px] xl:min-h-[112px] 2xl:min-h-[120px] py-2">
+          <div className="flex items-center justify-between min-h-[74px] sm:min-h-[82px] lg:min-h-[92px] xl:min-h-[98px] 2xl:min-h-[104px] py-2">
             {/* Logo — always visible */}
             <Logo hospitalName={settings?.hospitalName} locale={effectiveLocale} />
 
             {/* Desktop nav — hidden on mobile */}
             <nav
               aria-label="Primary navigation"
-              className="hidden lg:flex items-center gap-5 xl:gap-7"
+              className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7"
             >
               {PRIMARY_NAV_LINKS.map((link) => {
                 const label = NAV_TRANSLATION_KEYS[link.href] ? t(NAV_TRANSLATION_KEYS[link.href]) : link.name;
@@ -291,7 +291,7 @@ export function Header({
       </header>
 
       {/* Spacer to prevent content from sitting under fixed header */}
-      <div className="h-[74px] sm:h-[82px] lg:h-[96px] xl:h-[112px] 2xl:h-[120px]" aria-hidden="true" />
+      <div className="h-[74px] sm:h-[82px] lg:h-[92px] xl:h-[98px] 2xl:h-[104px]" aria-hidden="true" />
 
       {/* Mobile Nav Drawer */}
       <MobileNav

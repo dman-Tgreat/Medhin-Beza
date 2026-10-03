@@ -21,12 +21,12 @@ function FooterLogo({
 
   return (
     <Link href={`/${locale}`} className="flex items-center gap-3.5 group">
-      <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-white shadow-md border-2 border-white/20 transition-transform group-hover:scale-105 p-1">
+      <div className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] lg:w-[72px] lg:h-[72px] xl:w-[80px] xl:h-[80px] rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-white shadow-md border-2 border-white/20 transition-transform group-hover:scale-105 p-1">
         <Image
           src="/logo.png"
           alt={hospitalName}
-          width={112}
-          height={112}
+          width={128}
+          height={128}
           className="w-full h-full object-contain"
         />
       </div>

@@ -110,7 +110,7 @@ export function AdminSidebar({
             <div
               className={cn(
                 "shrink-0 items-center justify-center rounded-full overflow-hidden shadow-sm transition-transform group-hover:scale-105 border-2 border-primary/25 bg-white p-0.5",
-                collapsed ? "flex h-11 w-11 lg:h-12 lg:w-12" : "flex h-13 w-13 sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+                collapsed ? "flex w-[40px] h-[40px] lg:w-[44px] lg:h-[44px]" : "flex w-[48px] h-[48px] sm:w-[52px] sm:h-[52px] lg:w-[56px] lg:h-[56px]"
               )}
             >
               <Image
