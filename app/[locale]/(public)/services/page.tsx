@@ -5,6 +5,7 @@ import { ServicesDirectoryClient } from "@/components/public/ServicesDirectoryCl
 import { getPublicServices, getPublicDepartments, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -17,10 +18,18 @@ export async function generateMetadata(props: {
     getDictionary(locale),
   ]);
   return {
-    title: dict.services?.title || "Clinical Services & Diagnostics",
+    title: `${dict.services?.title || "Clinical Services & Treatments"} | ${settings.hospitalName}`,
     description:
       dict.services?.subtitle ||
-      `Comprehensive inpatient and outpatient clinical services, diagnostic imaging, pathology, and surgical procedures at ${settings.hospitalName} ${settings.city}.`,
+      `Comprehensive inpatient and outpatient clinical services, diagnostic imaging, pathology, and surgical procedures at ${settings.hospitalName} in ${settings.city}.`,
+    keywords: [
+      "Clinical Services Adama",
+      "Medical Diagnostics Adama",
+      "Laboratory and Ultrasound Adama",
+      "Surgery Center Adama",
+      "Maternity Services Adama",
+      ...HOSPITAL_SEO_KEYWORDS,
+    ],
   };
 }
 

@@ -33,6 +33,7 @@ import { getPublicAboutPage, getPublicPageBySlug, getPublicSiteSettings } from "
 import { cn } from "@/lib/utils";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -50,6 +51,12 @@ export async function generateMetadata(props: {
       dbPage?.metaDescription ||
       dbPage?.excerpt ||
       `Learn about ${settings.hospitalName} — our story, mission, vision, core values, leadership team, clinical environment, and accreditations.`,
+    keywords: [
+      `About ${settings.hospitalName}`,
+      `${settings.hospitalName} Adama`,
+      `${settings.hospitalName} leadership`,
+      ...HOSPITAL_SEO_KEYWORDS,
+    ],
   };
 }
 
