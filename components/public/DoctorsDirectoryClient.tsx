@@ -170,7 +170,7 @@ export function DoctorsDirectoryClient({
 
       {/* Results Header */}
       <div className="mb-6 flex items-center justify-between">
-        <p className="text-small text-text-muted">
+        <p className="text-small text-text-muted" aria-live="polite">
           Showing <strong className="text-text">{filteredDoctors.length}</strong> qualified medical specialists
         </p>
       </div>

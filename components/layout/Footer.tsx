@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { HOSPITAL_INFO, FOOTER_QUICK_LINKS, FOOTER_HOSPITAL_LINKS } from "@/lib/constants";
 import { EmergencyButton } from "@/components/ui/emergency-button";
 import type { SupportedLocale } from "@/lib/i18n/config";
@@ -105,6 +105,7 @@ export function Footer({
   const email = settings?.email || HOSPITAL_INFO.email;
   const hours = settings?.hours || HOSPITAL_INFO.hours;
   const emergencyPhone = settings?.emergencyPhone || HOSPITAL_INFO.emergencyPhone;
+  const telegram = settings?.telegram || HOSPITAL_INFO.telegram;
 
   const headings = {
     quickLinks:
@@ -192,6 +193,18 @@ export function Footer({
                 </a>
               </ContactRow>
               <ContactRow icon={Clock}>{hours}</ContactRow>
+              {telegram && (
+                <ContactRow icon={Send}>
+                  <a
+                    href={telegram.startsWith("http") ? telegram : `https://t.me/${telegram.replace(/^@/, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Telegram Support
+                  </a>
+                </ContactRow>
+              )}
             </div>
           </div>
 

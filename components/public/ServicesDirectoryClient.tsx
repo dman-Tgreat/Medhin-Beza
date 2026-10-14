@@ -104,7 +104,7 @@ export function ServicesDirectoryClient({
 
       {/* Results Count */}
       <div className="mb-6 flex items-center justify-between">
-        <p className="text-small text-text-muted">
+        <p className="text-small text-text-muted" aria-live="polite">
           Showing <strong className="text-text">{filteredServices.length}</strong> clinical services
         </p>
       </div>

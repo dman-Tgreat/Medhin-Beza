@@ -39,6 +39,7 @@ export function HospitalMap({
 
   const osmEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${latitude}%2C${longitude}`;
   const osmDirectUrl = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=16/${latitude}/${longitude}`;
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
   const geoUri = `geo:${latitude},${longitude}?q=${encodeURIComponent("Medhen Beza Hospital")}`;
 
   const handleCopyCoords = async () => {
@@ -103,7 +104,7 @@ export function HospitalMap({
           </button>
 
           <a
-            href={osmDirectUrl}
+            href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-bold text-white shadow-xs transition-colors min-h-[38px] ${
@@ -113,7 +114,17 @@ export function HospitalMap({
             }`}
           >
             <Navigation className="h-3.5 w-3.5" />
-            <span>Open in OpenStreetMap</span>
+            <span>Google Maps Directions</span>
+            <ExternalLink className="h-3 w-3 opacity-80" />
+          </a>
+
+          <a
+            href={osmDirectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-surface border border-border text-xs font-semibold text-text hover:bg-background transition-colors min-h-[38px]"
+          >
+            <span>OpenStreetMap</span>
             <ExternalLink className="h-3 w-3 opacity-80" />
           </a>
 

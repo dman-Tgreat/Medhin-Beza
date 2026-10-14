@@ -4,6 +4,7 @@ import {
   Mail,
   Clock,
   AlertTriangle,
+  Send,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,8 @@ export interface ContactInfoData {
   hours?: string;
   /** Emergency phone number — rendered with red accent */
   emergency?: string;
+  /** Telegram channel or support handle */
+  telegram?: string;
 }
 
 export interface ContactInfoProps extends ContactInfoData {
@@ -109,6 +112,7 @@ export function ContactInfo({
   email,
   hours,
   emergency,
+  telegram,
   compact = false,
   className,
 }: ContactInfoProps) {
@@ -158,6 +162,16 @@ export function ContactInfo({
       href: `tel:${emergency.replace(/\s/g, "")}`,
     });
   }
+  if (telegram) {
+    const cleanHandle = telegram.replace(/^https?:\/\/t\.me\//, "").replace(/^@/, "");
+    rows.push({
+      icon: Send,
+      label: "Telegram",
+      value: `@${cleanHandle}`,
+      compact,
+      href: telegram.startsWith("http") ? telegram : `https://t.me/${cleanHandle}`,
+    });
+  }
 
   if (rows.length === 0) return null;
 
@@ -185,4 +199,5 @@ export const CONTACT_INFO_DEFAULTS: ContactInfoData = {
   email: HOSPITAL_INFO.email,
   hours: HOSPITAL_INFO.hours,
   emergency: HOSPITAL_INFO.emergencyPhone,
+  telegram: HOSPITAL_INFO.telegram,
 };

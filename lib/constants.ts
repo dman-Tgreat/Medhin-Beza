@@ -17,6 +17,7 @@ export const HOSPITAL_INFO = {
   plusCode: "H73F+R49, Adama",
   hours: "24/7 Emergency & Inpatient Services",
   logo: "/logo.png",
+  telegram: "https://t.me/medhenbezahospital",
 };
 
 // ─── Public Site Navigation ───────────────────────────────────────────────────

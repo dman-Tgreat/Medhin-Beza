@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
 import { getPublicSiteSettings } from "@/lib/queries/public";
 import { isValidLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const headerList = await headers();
@@ -21,12 +28,22 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${settings.hospitalName}`,
     },
     description: siteDesc,
+    keywords: HOSPITAL_SEO_KEYWORDS,
+    authors: [{ name: settings.hospitalName, url: SITE_URL }],
+    creator: settings.hospitalName,
+    publisher: settings.hospitalName,
+    formatDetection: {
+      telephone: true,
+      address: true,
+      email: true,
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: {
         en: "/en",
         am: "/am",
         om: "/om",
+        "x-default": "/en",
       },
     },
     openGraph: {
@@ -35,14 +52,34 @@ export async function generateMetadata(): Promise<Metadata> {
       title: siteTitle,
       description: siteDesc,
       url: `${SITE_URL}/${locale}`,
+      locale: locale === "am" ? "am_ET" : locale === "om" ? "om_ET" : "en_US",
+      images: [
+        {
+          url: "/logo.png",
+          width: 512,
+          height: 512,
+          alt: `${settings.hospitalName} Logo`,
+        },
+      ],
     },
-    twitter: { card: "summary" },
+    twitter: {
+      card: "summary_large_image",
+      title: siteTitle,
+      description: siteDesc,
+      images: ["/logo.png"],
+    },
     icons: {
       icon: [
         { url: "/icon.png", type: "image/png" },
         { url: "/logo.png", type: "image/png" },
       ],
       apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    },
+    other: {
+      "geo.region": "ET-OR",
+      "geo.placename": "Adama",
+      "geo.position": "8.5395;39.2731",
+      "ICBM": "8.5395, 39.2731",
     },
   };
 }
@@ -57,7 +94,7 @@ export default async function RootLayout({
   const locale: SupportedLocale = rawLocale && isValidLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
 
   return (
-    <html lang={locale} className="h-full antialiased scroll-smooth">
+    <html lang={locale} className={`h-full antialiased scroll-smooth ${inter.variable}`}>
       <body className="min-h-full flex flex-col bg-background text-text font-sans">
         {children}
       </body>

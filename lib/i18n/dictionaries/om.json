@@ -44,7 +44,15 @@
     "published": "Maxxanfame",
     "noResults": "Odeeffannoon barbaaddan hin argamne.",
     "pageNotFound": "Fuulli hin argamne",
-    "somethingWentWrong": "Dogoggorri uumameera. Maaloo irra deebiaatii yaalaa."
+    "pageNotFoundDesc": "Fuulli, odeeffannoon ogeessaa ykn tajaajilli barbaaddan hin argamne ykn bakka jijjiirameera.",
+    "somethingWentWrong": "Dogoggorri uumameera. Maaloo irra deebiaatii yaalaa.",
+    "errorNotice": "Rakkoon teeknikaa yeroo gabaabaa uumameera. Gareen keenya beeksifameera.",
+    "skipToContent": "Kallattiin gara qabiyyee ijooti darbaa",
+    "emergencyCall": "Yaala Hatattamaa",
+    "switchboard": "Sarara Ijoo",
+    "tryAgain": "Irra Deebi'aa Yaalaa",
+    "returnHome": "Gara Fuula Duraatti Deebi'aa",
+    "urgentHelpNotice": "Balaa ykn haala hatattamaa keessa yoo jirtan, hin turinaa. Sarara tajaajila hatattamaa keenya 24/7 bilbilaa."
   },
   "nav": {
     "home": "Fuula Duraa",

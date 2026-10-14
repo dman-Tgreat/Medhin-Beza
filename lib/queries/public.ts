@@ -86,6 +86,7 @@ export interface PublicSiteSettings {
   country: string;
   seoTitle?: string;
   seoDescription?: string;
+  telegram?: string;
 }
 
 export async function getPublicSiteSettings(
@@ -221,6 +222,7 @@ export async function getPublicSiteSettings(
       emergencyHours,
       seoTitle,
       seoDescription,
+      telegram: map.get("hospital_telegram") || map.get("telegram") || HOSPITAL_INFO.telegram,
     };
   } catch (error) {
     console.error("[PUBLIC_QUERY_ERROR: getPublicSiteSettings]", error);
@@ -257,6 +259,7 @@ export async function getPublicSiteSettings(
       emergencyHours: "Open 24 Hours · 7 Days a Week · All Holidays",
       seoTitle: `${HOSPITAL_INFO.name} | ${HOSPITAL_INFO.tagline}`,
       seoDescription: HOSPITAL_INFO.description,
+      telegram: HOSPITAL_INFO.telegram,
     };
   }
 }

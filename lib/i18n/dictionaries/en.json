@@ -44,7 +44,15 @@
     "published": "Published",
     "noResults": "No results found matching your criteria.",
     "pageNotFound": "Page Not Found",
-    "somethingWentWrong": "Something went wrong. Please try again."
+    "pageNotFoundDesc": "The page, specialist profile, or hospital service you are looking for is unavailable or has been relocated.",
+    "somethingWentWrong": "Something went wrong. Please try again.",
+    "errorNotice": "We encountered an unexpected technical issue loading this page. Our technical team has been notified.",
+    "skipToContent": "Skip to main content",
+    "emergencyCall": "Call Emergency",
+    "switchboard": "Switchboard",
+    "tryAgain": "Try Again",
+    "returnHome": "Return to Homepage",
+    "urgentHelpNotice": "If you are experiencing a medical emergency, do not delay. Call our 24/7 trauma & emergency hotline immediately."
   },
   "nav": {
     "home": "Home",
