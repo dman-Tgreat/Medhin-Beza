@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
 import { HOSPITAL_INFO } from "@/lib/constants";
 
-export const SITE_URL = (
-  process.env.SITE_URL ||
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://medhenbeza.com")
-).replace(/\/$/, "");
+export const SITE_URL = (() => {
+  const custom = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL;
+  if (custom) return custom.replace(/\/$/, "");
+
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`.replace(/\/$/, "");
+  }
+
+  if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes("localhost")) {
+    return `https://${process.env.VERCEL_URL}`.replace(/\/$/, "");
+  }
+
+  return "https://medhenbeza.com";
+})();
 
 export function absoluteUrl(pathOrUrl: string) {
   if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
