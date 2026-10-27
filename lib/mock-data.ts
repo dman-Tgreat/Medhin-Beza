@@ -533,22 +533,22 @@ export const MOCK_ABOUT_PAGE_AM: AboutPageData = {
 
 export const MOCK_ABOUT_PAGE_OM: AboutPageData = {
   hero: {
-    title: "Waa'ee Hospitaala Medhen Beza",
+    title: "Waa'ee Hospitaala Medhin Beza",
     supportingText:
       "Dandeettii kilinikaalaa olaanaa, dandamannaa dhukkubsattootaafi yaala ammayyaaf Adaamaafi naannoo isaatti kan dhaabbate.",
     image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Gamoo guddaa Hospitaala Medhen Beza",
+    imageAlt: "Gamoo guddaa Hospitaala Medhin Beza",
   },
   introduction: {
     eyebrow: "Seenaa fi Kaayyoo Keenya",
     title: "Dhaabbata yaala ammayyaa amantummaa, ogeessotaafi garaa laafummaa irratti ijaarame",
     paragraphs: [
-      "Hospitaalli Medhen Beza kaayyoo tokkoon hundeeffame: dhukkubsattootaafi maatiiwwan Adaamaafi guutuu Itoophiyaa jiraniif tajaajila yaala addaa sadarkaa addunyaa dhiheessuudhaaf.",
+      "Hospitaalli Medhin Beza kaayyoo tokkoon hundeeffame: dhukkubsattootaafi maatiiwwan Adaamaafi guutuu Itoophiyaa jiraniif tajaajila yaala addaa sadarkaa addunyaa dhiheessuudhaaf.",
       "Sakatta'iinsa idilee irraa hanga yaala baqaqsanii yaaluu walxaxaa ta'etti, hospitaalli keenya dhukkubsataan hundi kabaja, of eeggannoofi deeggarsa garaa laafummaa akka argatu sa'aatii 24 hojjeta.",
       "Garee yaalaa keenya, ulaagaalee nageenya yaala idil-addunyaafi teknooloojiiwwan qorannoo ammayyaa irratti yeroo hunda invast goona.",
     ],
     photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80",
-    photoAlt: "Garee yaala Hospitaala Medhen Beza",
+    photoAlt: "Garee yaala Hospitaala Medhin Beza",
     ctaLabel: "Nu Qunnamaa",
     ctaHref: "/contact",
   },

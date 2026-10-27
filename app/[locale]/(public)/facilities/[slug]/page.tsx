@@ -18,6 +18,7 @@ import { getPublicFacilityBySlug, getPublicFacilities } from "@/lib/queries/publ
 import { FacilityGalleryLightbox } from "./FacilityGalleryLightbox";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { LOCALES, isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 interface FacilityPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -52,6 +53,7 @@ export async function generateMetadata({
   return {
     title: `${facility.name} | Hospital Facilities`,
     description: facility.description,
+    alternates: localizedAlternates(`/${locale}/facilities/${facility.slug}`),
   };
 }
 

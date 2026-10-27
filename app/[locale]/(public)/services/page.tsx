@@ -5,7 +5,7 @@ import { ServicesDirectoryClient } from "@/components/public/ServicesDirectoryCl
 import { getPublicServices, getPublicDepartments, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
-import { HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -18,7 +18,7 @@ export async function generateMetadata(props: {
     getDictionary(locale),
   ]);
   return {
-    title: `${dict.services?.title || "Clinical Services & Treatments"} | ${settings.hospitalName}`,
+    title: dict.services?.title || "Clinical Services & Treatments",
     description:
       dict.services?.subtitle ||
       `Comprehensive inpatient and outpatient clinical services, diagnostic imaging, pathology, and surgical procedures at ${settings.hospitalName} in ${settings.city}.`,
@@ -30,6 +30,7 @@ export async function generateMetadata(props: {
       "Maternity Services Adama",
       ...HOSPITAL_SEO_KEYWORDS,
     ],
+    alternates: localizedAlternates(`/${locale}/services`),
   };
 }
 

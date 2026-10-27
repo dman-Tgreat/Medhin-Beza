@@ -322,7 +322,7 @@ export function StandardPageEditorModal({
                   <Input
                     value={seoTitle}
                     onChange={(e) => setSeoTitle(e.target.value)}
-                    placeholder="e.g. Privacy Policy & Patient Confidentiality | Medhen Beza Hospital"
+                    placeholder="e.g. Privacy Policy & Patient Confidentiality | Medhin Beza Hospital"
                     className="bg-surface text-sm"
                   />
                 </div>

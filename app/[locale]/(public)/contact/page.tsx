@@ -5,7 +5,7 @@ import { getPublicDepartments, getPublicSiteSettings } from "@/lib/queries/publi
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { contactPointJsonLd, HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { contactPointJsonLd, HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -18,17 +18,18 @@ export async function generateMetadata(props: {
     getDictionary(locale),
   ]);
   return {
-    title: `${dict.contact?.title || "Contact & Location"} | ${settings.hospitalName}`,
+    title: dict.contact?.title || "Contact & Location",
     description:
       dict.contact?.subtitle ||
       `Get in touch with ${settings.hospitalName} in Adama, Ethiopia for general inquiries, clinical appointments, emergency admissions, and medical department contacts.`,
     keywords: [
-      "Contact Medhen Beza Hospital",
-      "Medhen Beza Hospital Adama location",
-      "Medhen Beza Hospital phone number",
+      "Contact Medhin Beza Hospital",
+      "Medhin Beza Hospital Adama location",
+      "Medhin Beza Hospital phone number",
       "Hospital phone number Adama",
       ...HOSPITAL_SEO_KEYWORDS,
     ],
+    alternates: localizedAlternates(`/${locale}/contact`),
   };
 }
 

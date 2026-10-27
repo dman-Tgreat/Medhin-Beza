@@ -41,7 +41,7 @@ const NAV_TRANSLATION_KEYS: Record<string, string> = {
 
 // ─── Logo ─────────────────────────────────────────────────────────────────────
 function Logo({
-  hospitalName = "Medhen Beza Hospital",
+  hospitalName = "Medhin Beza Hospital",
   locale = "en",
 }: {
   hospitalName?: string;

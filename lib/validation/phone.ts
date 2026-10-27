@@ -1,6 +1,6 @@
 /**
  * Ethiopian Phone Number Validation and Formatting Utility
- * Medhen Beza Hospital Web Platform
+ * Medhin Beza Hospital Web Platform
  *
  * Supported formats:
  * - Mobile: Ethio Telecom (9...) and Safaricom Ethiopia (7...)

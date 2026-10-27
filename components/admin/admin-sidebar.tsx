@@ -74,7 +74,7 @@ export function AdminSidebar({
   isResizing = false,
   onStartResize,
   onResetWidth,
-  hospitalName = "Medhen Beza Hospital",
+  hospitalName = "Medhin Beza Hospital",
 }: AdminSidebarProps) {
   const pathname = usePathname();
   const { currentUser, navGroups, logout } = useAdminRole();

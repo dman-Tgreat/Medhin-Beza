@@ -4,6 +4,7 @@ import { FAQsDirectoryClient } from "@/components/public/FAQsDirectoryClient";
 import { getPublicFAQs, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata(props: {
     description:
       dict.faqs?.subtitle ||
       `Find answers to frequently asked questions about doctor appointments, emergency admission, health insurance, visiting hours, and clinical services at ${settings.hospitalName}.`,
+    alternates: localizedAlternates(`/${locale}/faqs`),
   };
 }
 

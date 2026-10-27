@@ -4,6 +4,7 @@ import { GalleryDirectoryClient } from "@/components/public/GalleryDirectoryClie
 import { getPublicGallery, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata(props: {
     description:
       dict.gallery?.subtitle ||
       `Take a visual and video tour of ${settings.hospitalName}'s advanced diagnostic imaging suites, modern operating theatres, patient rooms, and specialized clinical centers.`,
+    alternates: localizedAlternates(`/${locale}/gallery`),
   };
 }
 

@@ -622,7 +622,7 @@ function mapNews(news: any, locale: SupportedLocale = DEFAULT_LOCALE): NewsDetai
     date: formatLocalizedDate(locNews.publishedAt || locNews.createdAt, locale),
     readTime,
     author: {
-      name: locNews.authorName || locNews.createdBy?.name || "Medhen Beza Medical Editorial",
+      name: locNews.authorName || locNews.createdBy?.name || "Medhin Beza Medical Editorial",
       role: "Medical Communications",
     },
     contentParagraphs: (locNews.content || "").split("\n\n").filter(Boolean),
@@ -710,13 +710,13 @@ function mapCareer(car: any, locale: SupportedLocale = DEFAULT_LOCALE): CareerDe
     location: locCar.location || "Addis Ababa, Ethiopia",
     deadline: formatLocalizedDate(deadlineDate, locale),
     postedDate: formatLocalizedDate(createdDate, locale),
-    overview: locCar.description || "Clinical opportunity at Medhen Beza Hospital.",
+    overview: locCar.description || "Clinical opportunity at Medhin Beza Hospital.",
     responsibilities: Array.isArray(locCar.responsibilities) ? locCar.responsibilities : [],
     requirements: Array.isArray(locCar.requirements) ? locCar.requirements : [],
     qualifications: Array.isArray(locCar.qualifications) ? locCar.qualifications : [],
     benefits: [
       "Competitive hospital compensation package",
-      "Comprehensive medical coverage at Medhen Beza Hospital",
+      "Comprehensive medical coverage at Medhin Beza Hospital",
       "Continuous professional training & development",
     ],
     contactEmail: locCar.department?.email || "careers@medhenbeza.com",
@@ -782,7 +782,7 @@ function mapEvent(ev: any, locale: SupportedLocale = DEFAULT_LOCALE): EventDetai
     year: eventDate.getFullYear(),
     dateFormatted: formatLocalizedDate(eventDate, locale),
     time: "Event Date Scheduled",
-    location: locEv.location || "Medhen Beza Hospital Campus",
+    location: locEv.location || "Medhin Beza Hospital Campus",
     isPast: eventDate < new Date(),
     description: locEv.description || "Hospital public medical event.",
     fullDescription: [locEv.description || "Special hospital event."],
@@ -969,14 +969,14 @@ export async function getPublicAboutPage(
   // Dynamically replace default brand names with live hospitalName from settings
   base.hero.title = `About ${settings.hospitalName}`;
   base.hero.supportingText = base.hero.supportingText.replace(
-    /Medhen Beza Hospital|Medhen Beza|Medhin Beza Hospital|Medhin Beza/gi,
+    /Medhin Beza Hospital|Medhen Beza Hospital|Medhin Beza|Medhen Beza/gi,
     settings.hospitalName
   );
   base.hero.imageAlt = `${settings.hospitalName} main medical facility`;
 
   base.introduction.paragraphs = base.introduction.paragraphs.map((p) =>
     p.replace(
-      /Medhen Beza Hospital|Medhen Beza|Medhin Beza Hospital|Medhin Beza/gi,
+      /Medhin Beza Hospital|Medhen Beza Hospital|Medhin Beza|Medhen Beza/gi,
       settings.hospitalName
     )
   );
@@ -1117,7 +1117,7 @@ function mapFacility(f: any, locale: SupportedLocale = DEFAULT_LOCALE): Facility
     slug: locF.slug || locF.id,
     name: locF.name,
     image: validImage,
-    imageAlt: `${locF.name} at Medhen Beza Hospital`,
+    imageAlt: `${locF.name} at Medhin Beza Hospital`,
     tagline: locF.tagline || locF.name,
     description: locF.description || "State-of-the-art clinical environment engineered for patient safety.",
     longDescription: locF.description || "",

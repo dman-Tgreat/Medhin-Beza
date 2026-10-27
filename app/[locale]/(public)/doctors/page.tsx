@@ -5,7 +5,7 @@ import { DoctorsDirectoryClient } from "@/components/public/DoctorsDirectoryClie
 import { getPublicDoctors, getPublicDepartments, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
-import { HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -18,19 +18,20 @@ export async function generateMetadata(props: {
     getDictionary(locale),
   ]);
   return {
-    title: `${dict.doctors?.title || "Find a Doctor & Specialists"} | ${settings.hospitalName}`,
+    title: dict.doctors?.title || "Find a Doctor & Specialists",
     description:
       dict.doctors?.subtitle ||
       `Search and find trusted, board-certified physicians, surgeons, and medical specialists at ${settings.hospitalName} in ${settings.city}.`,
     keywords: [
       "Doctors in Adama",
       "Specialist doctors Adama Ethiopia",
-      "Find a Doctor Medhen Beza",
+      "Find a Doctor Medhin Beza",
       "Surgeons in Adama",
       "Pediatricians Adama",
       "Gynecologists Adama",
       ...HOSPITAL_SEO_KEYWORDS,
     ],
+    alternates: localizedAlternates(`/${locale}/doctors`),
   };
 }
 

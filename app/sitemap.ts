@@ -21,13 +21,15 @@ const ROUTE_CONFIG: Record<string, { priority: number; changeFrequency: Metadata
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [doctors, departments, services, news, events, facilities] = await Promise.all([
+  const [doctors, departments, services, news, events, facilities, careers, pages] = await Promise.all([
     db.doctor.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
     db.department.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
     db.service.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
     db.news.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
     db.hospitalEvent.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
     db.facility.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
+    db.career.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
+    db.page.findMany({ where: { status: ContentStatus.PUBLISHED }, select: { slug: true, updatedAt: true } }),
   ]);
 
   const staticPaths = Object.keys(ROUTE_CONFIG);
@@ -58,17 +60,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ) => {
     for (const item of items) {
       for (const locale of LOCALES) {
+        const route = prefix ? `/${prefix}/${item.slug}` : `/${item.slug}`;
         entries.push({
-          url: `${SITE_URL}/${locale}/${prefix}/${item.slug}`,
+          url: `${SITE_URL}/${locale}${route}`,
           lastModified: item.updatedAt,
           changeFrequency,
           priority,
           alternates: {
             languages: {
               ...Object.fromEntries(
-                LOCALES.map((l) => [l, `${SITE_URL}/${l}/${prefix}/${item.slug}`])
+                LOCALES.map((l) => [l, `${SITE_URL}/${l}${route}`])
               ),
-              "x-default": `${SITE_URL}/en/${prefix}/${item.slug}`,
+              "x-default": `${SITE_URL}/en${route}`,
             },
           },
         });
@@ -82,6 +85,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   addDynamic(facilities, "facilities", 0.8, "monthly");
   addDynamic(news, "news", 0.75, "daily");
   addDynamic(events, "events", 0.7, "weekly");
+  addDynamic(careers, "careers", 0.65, "weekly");
+
+  const reservedPageSlugs = new Set([
+    "about", "careers", "contact", "departments", "doctors", "emergency",
+    "events", "facilities", "faqs", "gallery", "news", "services",
+  ]);
+  addDynamic(
+    pages.filter((page) => !reservedPageSlugs.has(page.slug.replace(/^\/+/, ""))),
+    "",
+    0.5,
+    "monthly"
+  );
 
   return entries;
 }

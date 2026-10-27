@@ -33,7 +33,7 @@ import { getPublicAboutPage, getPublicPageBySlug, getPublicSiteSettings } from "
 import { cn } from "@/lib/utils";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export async function generateMetadata(props: {
     getPublicPageBySlug("about", locale),
   ]);
   return {
-    title: dbPage?.metaTitle || `About Us | ${settings.hospitalName}`,
+    title: dbPage?.metaTitle || "About Us",
     description:
       dbPage?.metaDescription ||
       dbPage?.excerpt ||
@@ -57,6 +57,7 @@ export async function generateMetadata(props: {
       `${settings.hospitalName} leadership`,
       ...HOSPITAL_SEO_KEYWORDS,
     ],
+    alternates: localizedAlternates(`/${locale}/about`),
   };
 }
 
@@ -85,7 +86,7 @@ function Section({
 // ─── 1. PageHero ─────────────────────────────────────────────────────────────
 function AboutHero({
   data,
-  hospitalName = "Medhen Beza Hospital",
+  hospitalName = "Medhin Beza Hospital",
   breadcrumbLabel = "About",
 }: {
   data: AboutPageData["hero"];
@@ -265,7 +266,7 @@ function MissionVision({ data }: { data: AboutPageData["missionVision"] }) {
 // ─── 4. Core Values ──────────────────────────────────────────────────────────
 function CoreValues({
   values,
-  hospitalName = "Medhen Beza Hospital",
+  hospitalName = "Medhin Beza Hospital",
   eyebrow = "Our Principles",
   title = "Core Values",
   description,

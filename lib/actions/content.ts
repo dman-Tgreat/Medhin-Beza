@@ -898,7 +898,7 @@ export async function saveEventAction(
       id: data.id,
       title: data.title,
       date: String(data.eventDate),
-      location: data.location || "Medhen Beza Hospital Campus",
+      location: data.location || "Medhin Beza Hospital Campus",
       description: data.description,
       image: data.image,
       translations: (data as any).translations,

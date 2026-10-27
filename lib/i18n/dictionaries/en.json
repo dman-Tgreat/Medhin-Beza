@@ -83,7 +83,7 @@
     "departmentsDesc": "See all clinical departments and centers",
     "emergencyCare": "Emergency Care",
     "emergencyCareDesc": "24/7 trauma response and critical dispatch",
-    "introEyebrow": "Welcome to Medhen Beza",
+    "introEyebrow": "Welcome to Medhin Beza",
     "specialistPhysicians": "Specialist Physicians",
     "clinicalDepartments": "Clinical Departments",
     "emergencyResponse": "24/7 Emergency Response",
@@ -176,7 +176,7 @@
   },
   "news": {
     "title": "News & Medical Articles",
-    "subtitle": "Health tips, clinical breakthroughs, and updates from Medhen Beza Hospital",
+    "subtitle": "Health tips, clinical breakthroughs, and updates from Medhin Beza Hospital",
     "searchPlaceholder": "Search articles by title or keyword...",
     "allCategories": "All Categories",
     "readTime": "read",
@@ -202,7 +202,7 @@
     "empty": "No events found at this time."
   },
   "careers": {
-    "title": "Careers at Medhen Beza",
+    "title": "Careers at Medhin Beza",
     "subtitle": "Join our compassionate clinical and operational team in delivering excellence",
     "openPositions": "Open Positions",
     "allDepartments": "All Departments",

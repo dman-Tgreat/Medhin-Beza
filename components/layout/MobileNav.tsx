@@ -111,7 +111,7 @@ export function MobileNav({ isOpen, onClose, settings, currentLocale }: MobileNa
             </div>
             <div className="flex flex-col min-w-0 leading-tight">
               <span className="font-extrabold text-base text-text truncate">
-                {settings?.hospitalName || "Medhen Beza"}
+                {settings?.hospitalName || "Medhin Beza"}
               </span>
               <span className="text-[11px] font-bold text-primary uppercase tracking-wider">
                 Hospital

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_URL, HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { SITE_URL, HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 import { getPublicSiteSettings } from "@/lib/queries/public";
 import { isValidLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
 
@@ -48,15 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "max-snippet": -1,
       },
     },
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        en: "/en",
-        am: "/am",
-        om: "/om",
-        "x-default": "/en",
-      },
-    },
+    alternates: localizedAlternates(`/${locale}`),
     openGraph: {
       type: "website",
       siteName: settings.hospitalName,

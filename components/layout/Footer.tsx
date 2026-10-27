@@ -8,7 +8,7 @@ import type { PublicSiteSettings } from "@/lib/queries/public";
 
 // ─── Footer Logo ──────────────────────────────────────────────────────────────
 function FooterLogo({
-  hospitalName = "Medhen Beza Hospital",
+  hospitalName = "Medhin Beza Hospital",
   locale = "en",
 }: {
   hospitalName?: string;

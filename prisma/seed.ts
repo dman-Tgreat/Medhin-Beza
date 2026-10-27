@@ -5,7 +5,7 @@ import crypto from "crypto";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🌱 Starting database seeding for Medhen Beza Hospital (Multilingual: EN, AM, OM)...");
+  console.log("🌱 Starting database seeding for Medhin Beza Hospital (Multilingual: EN, AM, OM)...");
 
   // ─── 1. Clean existing records (in reverse dependency order) ───────────────
   await prisma.auditLog.deleteMany();
@@ -756,15 +756,15 @@ async function main() {
 
   const newsData = [
     {
-      title: "New Cardiac Catheterisation Laboratory Opens at Medhen Beza",
+      title: "New Cardiac Catheterisation Laboratory Opens at Medhin Beza",
       slug: "new-cardiac-catheterisation-lab-opens",
       summary: "Expanding interventional heart services with state-of-the-art imaging and catheterisation equipment.",
-      content: "Medhen Beza Hospital is proud to announce the commissioning of our new cardiac cath lab. This facility allows our cardiology team to deliver immediate life-saving interventions for acute myocardial infarction, coronary artery disease, and peripheral vascular disorders.",
+      content: "Medhin Beza Hospital is proud to announce the commissioning of our new cardiac cath lab. This facility allows our cardiology team to deliver immediate life-saving interventions for acute myocardial infarction, coronary artery disease, and peripheral vascular disorders.",
       authorName: "Dr. Dawit Haile",
       category: { connect: { id: category1.id } },
       tags: ["Cardiology", "Facilities", "Healthcare Innovation"],
-      metaTitle: "New Cardiac Cath Lab | Medhen Beza Hospital",
-      metaDescription: "Medhen Beza Hospital expands cardiac care with a new state-of-the-art catheterisation lab in Adama.",
+      metaTitle: "New Cardiac Cath Lab | Medhin Beza Hospital",
+      metaDescription: "Medhin Beza Hospital expands cardiac care with a new state-of-the-art catheterisation lab in Adama.",
       featuredImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
       ogImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
       status: ContentStatus.PUBLISHED,
@@ -778,9 +778,9 @@ async function main() {
           authorName: "ዶ/ር ዳዊት ኃይሌ",
         },
         om: {
-          title: "Laaboraatoriin Kaateeterayizeeshinii Onnee Haaraan Hospitaala Medhen Bezaatti Eebbifame",
+          title: "Laaboraatoriin Kaateeterayizeeshinii Onnee Haaraan Hospitaala Medhin Bezaatti Eebbifame",
           summary: "Tajaajila yaala onnee meeshaalee ammayyaa suuraafi kaateeterayizeeshiniitiin bal'isaa jira.",
-          content: "Hospitaalli Medhen Beza laaboraatorii kaateeterayizeeshinii onnee haaraa tajaajilaaf banaa gochuu isaa gammachuudhaan beeksisa. Dhaabbanni kun gareen yaala onnee keenya dhukkuba onnee tasaa, cufamuu hidda dhiigaa fi rakkoolee sirna dhiigaatiif yaala lubbuu baraaru hatattamaan akka kennu dandeessisa.",
+          content: "Hospitaalli Medhin Beza laaboraatorii kaateeterayizeeshinii onnee haaraa tajaajilaaf banaa gochuu isaa gammachuudhaan beeksisa. Dhaabbanni kun gareen yaala onnee keenya dhukkuba onnee tasaa, cufamuu hidda dhiigaa fi rakkoolee sirna dhiigaatiif yaala lubbuu baraaru hatattamaan akka kennu dandeessisa.",
           authorName: "Dr. Daawwit Hayilee",
         },
       },
@@ -793,8 +793,8 @@ async function main() {
       authorName: "Clinical Health Team",
       category: { connect: { id: category2.id } },
       tags: ["Heart Health", "Wellness", "Preventive Care"],
-      metaTitle: "Heart Disease Prevention | Medhen Beza Hospital",
-      metaDescription: "Learn key cardiovascular risk factors and preventative strategies from specialists at Medhen Beza Hospital.",
+      metaTitle: "Heart Disease Prevention | Medhin Beza Hospital",
+      metaDescription: "Learn key cardiovascular risk factors and preventative strategies from specialists at Medhin Beza Hospital.",
       featuredImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
       ogImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
       status: ContentStatus.PUBLISHED,
@@ -954,7 +954,7 @@ async function main() {
   const galleryData = [
     {
       title: "Main Hospital Inpatient Campus",
-      description: "Exterior overview of the Medhen Beza medical pavilion and emergency arrival bay in Adama.",
+      description: "Exterior overview of the Medhin Beza medical pavilion and emergency arrival bay in Adama.",
       album: "Facilities",
       type: MediaType.IMAGE,
       url: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
@@ -969,7 +969,7 @@ async function main() {
         },
         om: {
           title: "Gamoo Guddaa Ciisicha Hospitaalaa",
-          description: "Ilaalcha alaa gamoo yaala Medhen Bezaa fi karra dhufeensa ambaalaansii Adaamaa.",
+          description: "Ilaalcha alaa gamoo yaala Medhin Bezaa fi karra dhufeensa ambaalaansii Adaamaa.",
           album: "Dhaabbilee",
         },
       },
@@ -1165,7 +1165,7 @@ async function main() {
       slug: "annual-cardiovascular-health-screening-2026",
       description: "Free blood pressure checkups, BMI assessment, cholesterol testing, and consultation with our cardiology specialists in Adama.",
       eventDate: new Date("2026-10-10T09:00:00Z"),
-      location: "Medhen Beza Hospital Main Pavilion, Adama",
+      location: "Medhin Beza Hospital Main Pavilion, Adama",
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80",
       isFeatured: true,
       status: ContentStatus.PUBLISHED,
@@ -1178,7 +1178,7 @@ async function main() {
         om: {
           title: "Duula Sakatta'iinsa Fayyaa Onnee Hawaasaa Waggaa",
           description: "Qorannoo dhiibbaa dhiigaa tolaa, madaallii ulfaatina qaamaa (BMI), qorannoo koolestrooliifi gorsa ogeeyyii onnee keenya waliin Adaamaatti.",
-          location: "Wiirtuu Guddaa Hospitaala Medhen Beza, Adaamaa",
+          location: "Wiirtuu Guddaa Hospitaala Medhin Beza, Adaamaa",
         },
       },
     },
@@ -1433,7 +1433,7 @@ async function main() {
       },
     },
     {
-      question: "Does Medhen Beza Hospital accept insurance coverage?",
+      question: "Does Medhin Beza Hospital accept insurance coverage?",
       answer: "Yes, we partner with major Ethiopian health insurers and international healthcare plans. Please present your insurance membership card at reception.",
       category: "Billing & Insurance",
       order: 3,
@@ -1445,7 +1445,7 @@ async function main() {
           category: "ክፍያና ኢንሹራንስ",
         },
         om: {
-          question: "Hospitaalli Medhen Beza Inshuraansii fayyaa ni fudhataa?",
+          question: "Hospitaalli Medhin Beza Inshuraansii fayyaa ni fudhataa?",
           answer: "Eeyyee, dhaabbilee inshuraansii fayyaa gurguddoo Itoophiyaafi idil-addunyaa wajjin waliigaltee qabna. Maaloo kaardii miseensummaa keessan fuulduratti dhiheessaa.",
           category: "Kaffaltiifi Inshuraansii",
         },
@@ -1461,7 +1461,7 @@ async function main() {
   // ─── 13. Seed Site Settings (§22) ───────────────────────────────────────────
   const settingsData = [
     // Base Settings (English)
-    { key: "hospital_name", value: "Medhen Beza Hospital", group: "general", description: "Official hospital name" },
+    { key: "hospital_name", value: "Medhin Beza Hospital", group: "general", description: "Official hospital name" },
     { key: "tagline", value: "Leading Healthcare Excellence", group: "general", description: "Hospital brand tagline" },
     { key: "hero_headline", value: "Compassionate care.", group: "content", description: "Homepage hero main headline" },
     { key: "hero_headline_accent", value: "Trusted healthcare.", group: "content", description: "Homepage hero accented headline" },
@@ -1500,7 +1500,7 @@ async function main() {
     { key: "location_am", value: "አዳማ፣ ኢትዮጵያ", group: "contact", description: "Location in Amharic" },
 
     // Afan Oromo Settings (_om)
-    { key: "hospital_name_om", value: "Hospitaala Medhen Beza", group: "general", description: "Official hospital name in Afan Oromo" },
+    { key: "hospital_name_om", value: "Hospitaala Medhin Beza", group: "general", description: "Official hospital name in Afan Oromo" },
     { key: "tagline_om", value: "Tajaajila Yaalaa Ol'aanaa", group: "general", description: "Hospital brand tagline in Afan Oromo" },
     { key: "hero_headline_om", value: "Kunuunsa garaa laafummaa.", group: "content", description: "Homepage hero headline in Afan Oromo" },
     { key: "hero_headline_accent_om", value: "Tajaajila yaalaa amanamaa.", group: "content", description: "Homepage hero accent in Afan Oromo" },
@@ -1522,26 +1522,26 @@ async function main() {
   // ─── 14. Seed CMS Pages (§14) ───────────────────────────────────────────────
   const pagesData = [
     {
-      title: "About Medhen Beza Hospital",
+      title: "About Medhin Beza Hospital",
       slug: "about",
       excerpt: "Dedicated to clinical excellence, compassionate patient recovery, and advanced medical practice in Adama and beyond.",
       content: JSON.stringify({
         hero: {
-          title: "About Medhen Beza Hospital",
+          title: "About Medhin Beza Hospital",
           supportingText: "Dedicated to clinical excellence, compassionate patient recovery, and advanced medical practice in Adama and beyond.",
           image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
-          imageAlt: "Medhen Beza Hospital campus in Adama",
+          imageAlt: "Medhin Beza Hospital campus in Adama",
         },
         introduction: {
           eyebrow: "Our Story & Purpose",
           title: "A modern healthcare institution built on trust, clinical expertise, and compassion",
           paragraphs: [
-            "Medhen Beza Hospital was founded with a singular purpose: to bring accessible, world-class specialized healthcare to patients and families across Adama and throughout Ethiopia.",
+            "Medhin Beza Hospital was founded with a singular purpose: to bring accessible, world-class specialized healthcare to patients and families across Adama and throughout Ethiopia.",
             "From routine outpatient consultations to complex multi-stage surgical procedures, our hospital operates around the clock to ensure every patient receives dignity, clinical precision, and compassionate support.",
             "We invest continuously in our medical workforce, international standards of clinical safety, and the latest diagnostic technologies.",
           ],
           photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80",
-          photoAlt: "Clinical leadership and medical team at Medhen Beza Hospital",
+          photoAlt: "Clinical leadership and medical team at Medhin Beza Hospital",
           ctaLabel: "Contact Us",
           ctaHref: "/contact",
         },
@@ -1811,25 +1811,25 @@ async function main() {
           }),
         },
         om: {
-          title: "Waa'ee Hospitaala Medhen Beza",
+          title: "Waa'ee Hospitaala Medhin Beza",
           excerpt: "Dandeettii kilinikaalaa olaanaa, dandamannaa dhukkubsattootaafi yaala ammayyaaf Adaamaafi naannoo isaatti kan dhaabbate.",
           content: JSON.stringify({
             hero: {
-              title: "Waa'ee Hospitaala Medhen Beza",
+              title: "Waa'ee Hospitaala Medhin Beza",
               supportingText: "Dandeettii kilinikaalaa olaanaa, dandamannaa dhukkubsattootaafi yaala ammayyaaf Adaamaafi naannoo isaatti kan dhaabbate.",
               image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
-              imageAlt: "Gamoo Hospitaala Medhen Beza Adaamaa",
+              imageAlt: "Gamoo Hospitaala Medhin Beza Adaamaa",
             },
             introduction: {
               eyebrow: "Seenaa fi Kaayyoo Keenya",
               title: "Dhaabbata yaala ammayyaa amantummaa, ogeessotaafi garaa laafummaa irratti ijaarame",
               paragraphs: [
-                "Hospitaalli Medhen Beza kaayyoo tokkoon hundeeffame: dhukkubsattootaafi maatiiwwan Adaamaafi guutuu Itoophiyaa jiraniif tajaajila yaala addaa sadarkaa addunyaa dhiheessuudhaaf.",
+                "Hospitaalli Medhin Beza kaayyoo tokkoon hundeeffame: dhukkubsattootaafi maatiiwwan Adaamaafi guutuu Itoophiyaa jiraniif tajaajila yaala addaa sadarkaa addunyaa dhiheessuudhaaf.",
                 "Sakatta'iinsa idilee irraa hanga yaala baqaqsanii yaaluu walxaxaa ta'etti, hospitaalli keenya dhukkubsataan hundi kabaja, of eeggannoofi deeggarsa garaa laafummaa akka argatu sa'aatii 24 hojjeta.",
                 "Garee yaalaa keenya, ulaagaalee nageenya yaala idil-addunyaafi teknooloojiiwwan qorannoo ammayyaa irratti yeroo hunda invast goona.",
               ],
               photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80",
-              photoAlt: "Garee hooggana yaala Hospitaala Medhen Beza",
+              photoAlt: "Garee hooggana yaala Hospitaala Medhin Beza",
               ctaLabel: "Nu Qunnamaa",
               ctaHref: "/contact",
             },
@@ -1978,7 +1978,7 @@ async function main() {
       title: "Privacy Policy",
       slug: "privacy",
       excerpt: "Patient data confidentiality, health record protection, and digital privacy policy.",
-      content: "Medhen Beza Hospital maintains strict patient data confidentiality in accordance with medical ethics and applicable legal standards in Ethiopia.",
+      content: "Medhin Beza Hospital maintains strict patient data confidentiality in accordance with medical ethics and applicable legal standards in Ethiopia.",
       status: ContentStatus.PUBLISHED,
       publishedAt: new Date(),
       translations: {
@@ -1990,7 +1990,7 @@ async function main() {
         om: {
           title: "Iggita Iccitii",
           excerpt: "Iccitii ragaa dhukkubsataa, eegumsa galmee fayyaafi imaammata iccitii dijiitaalaa.",
-          content: "Hospitaalli Medhen Beza akka heera yaalaafi seera Itoophiyaatti iccitii ragaa dhukkubsattootaa cimsee eega.",
+          content: "Hospitaalli Medhin Beza akka heera yaalaafi seera Itoophiyaatti iccitii ragaa dhukkubsattootaa cimsee eega.",
         },
       },
     },
@@ -1998,7 +1998,7 @@ async function main() {
       title: "Terms of Service",
       slug: "terms",
       excerpt: "Terms governing use of hospital website and appointment booking services.",
-      content: "By accessing the Medhen Beza Hospital portal, visitors and patients agree to comply with our institutional policies and digital communication guidelines.",
+      content: "By accessing the Medhin Beza Hospital portal, visitors and patients agree to comply with our institutional policies and digital communication guidelines.",
       status: ContentStatus.PUBLISHED,
       publishedAt: new Date(),
       translations: {
@@ -2010,7 +2010,7 @@ async function main() {
         om: {
           title: "Waliigaltee Tajaajilaa",
           excerpt: "Ulaagaalee weebsaayitii hospitaalaafi tajaajila beellama qabachuu to'atan.",
-          content: "Poortaalii Hospitaala Medhen Beza fayyadamuudhaan, maamiltoonni imaammata dhaabbatichaa kabajuuf walii galu.",
+          content: "Poortaalii Hospitaala Medhin Beza fayyadamuudhaan, maamiltoonni imaammata dhaabbatichaa kabajuuf walii galu.",
         },
       },
     },

@@ -39,7 +39,7 @@ export function EventsAdminClient({ initialEvents }: EventsAdminClientProps) {
     location: evt.location || "Hospital Main Campus",
     description: evt.description || "",
     image: evt.image || undefined,
-    organizer: evt.organizer || "Medhen Beza Administration",
+    organizer: evt.organizer || "Medhin Beza Administration",
     status: evt.status as ContentStatusType,
     translations: evt.translations,
   }));

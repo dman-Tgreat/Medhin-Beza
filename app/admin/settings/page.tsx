@@ -38,7 +38,7 @@ export default function SettingsAdminPage() {
   const [locLang, setLocLang] = useState<"am" | "om">("am");
 
   // Hospital Contact Info
-  const [hospitalName, setHospitalName] = useState("Medhen Beza Specialized Hospital");
+  const [hospitalName, setHospitalName] = useState("Medhin Beza Specialized Hospital");
   const [phoneMain, setPhoneMain] = useState("+251 11 654 3210");
   const [phoneEmergency, setPhoneEmergency] = useState("+251 11 654 9999");
   const [ambulancePhone, setAmbulancePhone] = useState("+251 911 000 999");
@@ -63,7 +63,7 @@ export default function SettingsAdminPage() {
   const [enableEmailNotifications, setEnableEmailNotifications] = useState(true);
 
   // SEO & Meta Defaults
-  const [metaTitle, setMetaTitle] = useState("Medhen Beza Hospital | Compassionate Care & Advanced Medicine");
+  const [metaTitle, setMetaTitle] = useState("Medhin Beza Hospital | Compassionate Care & Advanced Medicine");
   const [metaDescription, setMetaDescription] = useState("Leading specialized tertiary hospital in Addis Ababa providing 24/7 emergency response, cardiology, and surgical care.");
 
   // Multilingual Localized Settings (Amharic)

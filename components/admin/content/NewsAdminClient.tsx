@@ -57,7 +57,7 @@ export function NewsAdminClient({ initialNews }: NewsAdminClientProps) {
     id: item.id,
     title: item.title,
     category: item.category?.name || "Hospital News",
-    author: item.authorName || item.createdBy?.name || "Medhen Beza Team",
+    author: item.authorName || item.createdBy?.name || "Medhin Beza Team",
     publishedDate: item.publishedAt ? new Date(item.publishedAt).toLocaleDateString() : "—",
     status: item.status as ContentStatusType,
     coverImage: item.coverImage || item.featuredImage || undefined,

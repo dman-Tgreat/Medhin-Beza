@@ -13,7 +13,7 @@ export async function GET() {
     return NextResponse.json({
       status: "healthy",
       database: "connected",
-      hospital: "Medhen Beza Hospital",
+      hospital: "Medhin Beza Hospital",
       stats: {
         roles: rolesCount,
         departments: departmentsCount,

@@ -14,7 +14,7 @@ interface HospitalMapProps {
   className?: string;
 }
 
-// Default GPS Coordinates for Medhen Beza Hospital, Adama, Ethiopia
+// Default GPS Coordinates for Medhin Beza Hospital, Adama, Ethiopia
 const DEFAULT_LAT = 8.5395;
 const DEFAULT_LON = 39.2731;
 const DEFAULT_PLUS_CODE = "H73F+R49, Adama";
@@ -40,7 +40,7 @@ export function HospitalMap({
   const osmEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${latitude}%2C${longitude}`;
   const osmDirectUrl = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=16/${latitude}/${longitude}`;
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
-  const geoUri = `geo:${latitude},${longitude}?q=${encodeURIComponent("Medhen Beza Hospital")}`;
+  const geoUri = `geo:${latitude},${longitude}?q=${encodeURIComponent("Medhin Beza Hospital")}`;
 
   const handleCopyCoords = async () => {
     try {
@@ -143,7 +143,7 @@ export function HospitalMap({
       {/* Interactive OpenStreetMap Container */}
       <div className="relative aspect-[16/9] md:aspect-[21/8] rounded-2xl overflow-hidden border border-border bg-background shadow-xs">
         <iframe
-          title={title || "Medhen Beza Hospital Campus Map"}
+          title={title || "Medhin Beza Hospital Campus Map"}
           src={osmEmbedUrl}
           className="w-full h-full border-0 absolute inset-0"
           loading="lazy"

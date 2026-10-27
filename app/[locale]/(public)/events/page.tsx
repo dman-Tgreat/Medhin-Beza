@@ -4,6 +4,7 @@ import { EventsDirectoryClient } from "@/components/public/EventsDirectoryClient
 import { getPublicEvents, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata(props: {
     description:
       dict.events?.subtitle ||
       `Explore upcoming medical symposiums, community health drives, free screening camps, and wellness workshops hosted by ${settings.hospitalName} in ${settings.city}.`,
+    alternates: localizedAlternates(`/${locale}/events`),
   };
 }
 

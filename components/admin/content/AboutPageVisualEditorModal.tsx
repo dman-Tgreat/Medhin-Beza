@@ -129,24 +129,24 @@ interface AboutPageFormState {
 
 const DEFAULT_ABOUT_FORM: AboutPageFormState = {
   hero: {
-    title: "About Medhen Beza Hospital",
+    title: "About Medhin Beza Hospital",
     supportingText:
       "Dedicated to clinical excellence, compassionate patient recovery, and advanced medical practice in Adama and beyond.",
     image:
       "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Medhen Beza Hospital campus in Adama",
+    imageAlt: "Medhin Beza Hospital campus in Adama",
   },
   introduction: {
     eyebrow: "Our Story & Purpose",
     title: "A modern healthcare institution built on trust, clinical expertise, and compassion",
     paragraphs: [
-      "Medhen Beza Hospital was founded with a singular purpose: to bring accessible, world-class specialized healthcare to patients and families across Adama and throughout Ethiopia.",
+      "Medhin Beza Hospital was founded with a singular purpose: to bring accessible, world-class specialized healthcare to patients and families across Adama and throughout Ethiopia.",
       "From routine outpatient consultations to complex multi-stage surgical procedures, our hospital operates around the clock to ensure every patient receives dignity, clinical precision, and compassionate support.",
       "We invest continuously in our medical workforce, international standards of clinical safety, and the latest diagnostic technologies.",
     ],
     photo:
       "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80",
-    photoAlt: "Clinical leadership and medical team at Medhen Beza Hospital",
+    photoAlt: "Clinical leadership and medical team at Medhin Beza Hospital",
     ctaLabel: "Contact Us",
     ctaHref: "/contact",
   },
@@ -277,9 +277,9 @@ const DEFAULT_ABOUT_FORM: AboutPageFormState = {
     ctaLabel: "Contact Us Today",
     ctaHref: "/contact",
   },
-  seoTitle: "About Us | Medhen Beza Hospital",
+  seoTitle: "About Us | Medhin Beza Hospital",
   seoDescription:
-    "Learn about Medhen Beza Hospital — our history, clinical leadership team, mission, values, and world-class healthcare facilities in Adama.",
+    "Learn about Medhin Beza Hospital — our history, clinical leadership team, mission, values, and world-class healthcare facilities in Adama.",
 };
 
 const DEFAULT_ABOUT_FORM_AM: AboutPageFormState = {
@@ -357,14 +357,14 @@ const DEFAULT_ABOUT_FORM_OM: AboutPageFormState = {
     title: MOCK_ABOUT_PAGE_OM.hero.title,
     supportingText: MOCK_ABOUT_PAGE_OM.hero.supportingText,
     image: MOCK_ABOUT_PAGE_OM.hero.image || DEFAULT_ABOUT_FORM.hero.image,
-    imageAlt: MOCK_ABOUT_PAGE_OM.hero.imageAlt || "Gamoo guddaa Hospitaala Medhen Beza",
+    imageAlt: MOCK_ABOUT_PAGE_OM.hero.imageAlt || "Gamoo guddaa Hospitaala Medhin Beza",
   },
   introduction: {
     eyebrow: MOCK_ABOUT_PAGE_OM.introduction.eyebrow,
     title: MOCK_ABOUT_PAGE_OM.introduction.title,
     paragraphs: [...MOCK_ABOUT_PAGE_OM.introduction.paragraphs],
     photo: MOCK_ABOUT_PAGE_OM.introduction.photo || DEFAULT_ABOUT_FORM.introduction.photo,
-    photoAlt: MOCK_ABOUT_PAGE_OM.introduction.photoAlt || "Garee yaala Hospitaala Medhen Beza",
+    photoAlt: MOCK_ABOUT_PAGE_OM.introduction.photoAlt || "Garee yaala Hospitaala Medhin Beza",
     ctaLabel: MOCK_ABOUT_PAGE_OM.introduction.ctaLabel,
     ctaHref: MOCK_ABOUT_PAGE_OM.introduction.ctaHref,
   },
@@ -418,7 +418,7 @@ const DEFAULT_ABOUT_FORM_OM: AboutPageFormState = {
     ctaLabel: MOCK_ABOUT_PAGE_OM.finalCta.ctaLabel,
     ctaHref: MOCK_ABOUT_PAGE_OM.finalCta.ctaHref,
   },
-  seoTitle: "Waa'ee Hospitaala Medhen Beza | Adaamaa",
+  seoTitle: "Waa'ee Hospitaala Medhin Beza | Adaamaa",
   seoDescription: MOCK_ABOUT_PAGE_OM.hero.supportingText,
 };
 
@@ -1019,7 +1019,7 @@ export function AboutPageVisualEditorModal({
       ...(translations || {}),
       am: {
         ...(translations?.am || {}),
-        title: currentForms.am.hero.title || currentForms.en.hero.title || "About Medhen Beza Hospital",
+        title: currentForms.am.hero.title || currentForms.en.hero.title || "About Medhin Beza Hospital",
         excerpt: currentForms.am.hero.supportingText || currentForms.en.hero.supportingText,
         metaTitle: currentForms.am.seoTitle || currentForms.en.seoTitle,
         metaDescription: currentForms.am.seoDescription || currentForms.en.seoDescription,
@@ -1027,7 +1027,7 @@ export function AboutPageVisualEditorModal({
       },
       om: {
         ...(translations?.om || {}),
-        title: currentForms.om.hero.title || currentForms.en.hero.title || "About Medhen Beza Hospital",
+        title: currentForms.om.hero.title || currentForms.en.hero.title || "About Medhin Beza Hospital",
         excerpt: currentForms.om.hero.supportingText || currentForms.en.hero.supportingText,
         metaTitle: currentForms.om.seoTitle || currentForms.en.seoTitle,
         metaDescription: currentForms.om.seoDescription || currentForms.en.seoDescription,
@@ -1038,7 +1038,7 @@ export function AboutPageVisualEditorModal({
     onSubmit(
       {
         id: initialPage?.id,
-        title: currentForms.en.hero.title || "About Medhen Beza Hospital",
+        title: currentForms.en.hero.title || "About Medhin Beza Hospital",
         slug: "about",
         content: enContent,
         excerpt: currentForms.en.hero.supportingText,
@@ -1205,7 +1205,7 @@ export function AboutPageVisualEditorModal({
                             hero: { ...prev.hero, title: e.target.value },
                           }))
                         }
-                        placeholder="e.g. About Medhen Beza Hospital"
+                        placeholder="e.g. About Medhin Beza Hospital"
                         className="bg-surface text-sm"
                       />
                     </div>
@@ -1242,7 +1242,7 @@ export function AboutPageVisualEditorModal({
                             hero: { ...prev.hero, imageAlt: e.target.value },
                           }))
                         }
-                        placeholder="e.g. Exterior view of Medhen Beza Hospital campus in Adama"
+                        placeholder="e.g. Exterior view of Medhin Beza Hospital campus in Adama"
                         className="bg-surface text-sm"
                       />
                     </div>
@@ -2171,7 +2171,7 @@ export function AboutPageVisualEditorModal({
                     <Input
                       value={form.seoTitle}
                       onChange={(e) => setForm((prev) => ({ ...prev, seoTitle: e.target.value }))}
-                      placeholder="About Us | Medhen Beza Hospital"
+                      placeholder="About Us | Medhin Beza Hospital"
                       className="bg-background text-sm"
                     />
                   </div>

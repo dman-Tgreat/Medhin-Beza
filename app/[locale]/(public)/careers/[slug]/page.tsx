@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { getPublicCareerBySlug, getPublicCareers, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { LOCALES, isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 interface CareerPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -47,6 +48,7 @@ export async function generateMetadata({
   return {
     title: `${career.position} | Careers`,
     description: career.overview,
+    alternates: localizedAlternates(`/${locale}/careers/${career.slug}`),
   };
 }
 

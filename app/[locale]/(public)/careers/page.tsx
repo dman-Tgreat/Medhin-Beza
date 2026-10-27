@@ -4,6 +4,7 @@ import { CareersDirectoryClient } from "@/components/public/CareersDirectoryClie
 import { getPublicCareers, getPublicDepartments, getPublicSiteSettings } from "@/lib/queries/public";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata(props: {
     description:
       dict.careers?.subtitle ||
       `Join the clinical, nursing, and administrative team at ${settings.hospitalName}. Explore open career opportunities and healthcare vacancies in ${settings.city}.`,
+    alternates: localizedAlternates(`/${locale}/careers`),
   };
 }
 

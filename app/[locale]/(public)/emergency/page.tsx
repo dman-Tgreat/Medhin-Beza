@@ -12,7 +12,7 @@ import { HospitalMap } from "@/components/public/HospitalMap";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { isSupportedLocale, DEFAULT_LOCALE, type SupportedLocale } from "@/lib/i18n/config";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { emergencyServiceJsonLd, HOSPITAL_SEO_KEYWORDS } from "@/lib/seo";
+import { emergencyServiceJsonLd, HOSPITAL_SEO_KEYWORDS, localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
     getDictionary(locale),
   ]);
   return {
-    title: `${dict.nav?.emergency || "24/7 Emergency Care"} | ${settings.hospitalName}`,
+    title: dict.nav?.emergency || "24/7 Emergency Care",
     description: `24/7 Emergency Medical Response & Trauma Center at ${settings.hospitalName} in Adama. Immediate critical care hotline available around the clock.`,
     keywords: [
       "Emergency Hospital Adama",
@@ -34,6 +34,7 @@ export async function generateMetadata(props: {
       "Trauma Center Adama",
       ...HOSPITAL_SEO_KEYWORDS,
     ],
+    alternates: localizedAlternates(`/${locale}/emergency`),
   };
 }
 

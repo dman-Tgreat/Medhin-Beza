@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HOSPITAL_INFO } from "@/lib/constants";
+import { LOCALES } from "@/lib/i18n/config";
 
 export const SITE_URL = (() => {
   const custom = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL;
@@ -13,12 +14,37 @@ export const SITE_URL = (() => {
     return `https://${process.env.VERCEL_URL}`.replace(/\/$/, "");
   }
 
-  return "https://medhenbeza.com";
+  // Keep the production fallback aligned with the deployed public site. A
+  // custom domain, when added later, should be supplied through SITE_URL.
+  return "https://medhin-beza.vercel.app";
 })();
 
 export function absoluteUrl(pathOrUrl: string) {
   if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
   return `${SITE_URL}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
+}
+
+/**
+ * Produces a self-referencing canonical plus matching language alternates for
+ * a public route. Page metadata must override the root homepage canonical;
+ * otherwise Next.js metadata inheritance makes section pages look like
+ * duplicates of the locale homepage to crawlers.
+ */
+export function localizedAlternates(path: string, canonicalUrl?: string | null) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const parts = normalizedPath.split("/").filter(Boolean);
+  const suffix = LOCALES.includes(parts[0] as (typeof LOCALES)[number])
+    ? parts.slice(1)
+    : parts;
+  const suffixPath = suffix.length > 0 ? `/${suffix.join("/")}` : "";
+
+  return {
+    canonical: absoluteUrl(canonicalUrl || normalizedPath),
+    languages: {
+      ...Object.fromEntries(LOCALES.map((locale) => [locale, absoluteUrl(`/${locale}${suffixPath}`)])),
+      "x-default": absoluteUrl(`/en${suffixPath}`),
+    },
+  };
 }
 
 function descriptionFallback(value: string | undefined, fallback: string) {
@@ -29,16 +55,16 @@ function descriptionFallback(value: string | undefined, fallback: string) {
 // ─── Search Engine Optimization: Brand Alternate Spellings ───────────────────
 // Captures phonetic, transliteration, and localized variations across search engines
 export const HOSPITAL_ALTERNATE_NAMES = [
-  "Medhen Beza Hospital",
   "Medhin Beza Hospital",
-  "Medhen Beza General Hospital",
+  "Medhen Beza Hospital",
   "Medhin Beza General Hospital",
-  "Medhen Beza",
+  "Medhen Beza General Hospital",
   "Medhin Beza",
-  "Medhenbeza Hospital",
+  "Medhen Beza",
   "Medhinbeza Hospital",
-  "Medhenbeza",
+  "Medhenbeza Hospital",
   "Medhinbeza",
+  "Medhenbeza",
   "መድህን ቤዛ ሆስፒታል",
   "መድህን ቤዛ",
   "መድኀን ቤዛ ሆስፒታል",
@@ -49,10 +75,10 @@ export const HOSPITAL_ALTERNATE_NAMES = [
 ] as const;
 
 export const HOSPITAL_SEO_KEYWORDS = [
-  "Medhen Beza Hospital",
   "Medhin Beza Hospital",
-  "Medhen Beza",
+  "Medhen Beza Hospital",
   "Medhin Beza",
+  "Medhen Beza",
   "መድህን ቤዛ ሆስፒታል",
   "መድህን ቤዛ",
   "Hospitaala Medhin Beza",
@@ -89,7 +115,7 @@ export function contentMetadata(input: {
     title: input.title,
     description,
     keywords: input.keywords || HOSPITAL_SEO_KEYWORDS,
-    alternates: { canonical: url },
+    alternates: localizedAlternates(input.path, input.canonicalUrl),
     openGraph: {
       type: input.type || "website",
       url,
@@ -149,7 +175,7 @@ export function hospitalJsonLd(settings?: {
     "@type": "Hospital",
     "@id": `${SITE_URL}/#hospital`,
     name,
-    legalName: "Medhen Beza Hospital",
+    legalName: "Medhin Beza Hospital",
     alternateName: HOSPITAL_ALTERNATE_NAMES,
     description,
     url: SITE_URL,
@@ -251,7 +277,7 @@ export function websiteJsonLd(locale = "en") {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: "Medhen Beza Hospital",
+    name: "Medhin Beza Hospital",
     alternateName: HOSPITAL_ALTERNATE_NAMES,
     publisher: {
       "@id": `${SITE_URL}/#hospital`,

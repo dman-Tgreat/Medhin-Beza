@@ -133,11 +133,11 @@ export function AdminTopbar({
         <Link
           href="/admin"
           className="md:hidden flex h-11 w-11 shrink-0 items-center justify-center rounded-full overflow-hidden border-2 border-primary/20 bg-white p-0.5 shadow-xs"
-          title="Medhen Beza Hospital CMS"
+          title="Medhin Beza Hospital CMS"
         >
           <Image
             src="/logo.png"
-            alt="Medhen Beza Hospital"
+            alt="Medhin Beza Hospital"
             width={44}
             height={44}
             className="w-full h-full object-contain"
@@ -158,7 +158,7 @@ export function AdminTopbar({
 
         <div className="flex flex-col min-w-0">
           <div className="hidden sm:flex items-center gap-2 text-xs text-text-light">
-            <span>Medhen Beza CMS</span>
+            <span>Medhin Beza CMS</span>
             <span>/</span>
             <span className="font-medium text-text capitalize">
               {pathname.split("/")[2] || "Dashboard"}
