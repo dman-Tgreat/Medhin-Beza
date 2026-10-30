@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(SITE_URL),
+    applicationName: settings.hospitalName,
     title: {
       default: siteTitle,
       template: `%s | ${settings.hospitalName}`,
@@ -83,6 +84,8 @@ export async function generateMetadata(): Promise<Metadata> {
       "geo.placename": "Adama",
       "geo.position": "8.5395;39.2731",
       "ICBM": "8.5395, 39.2731",
+      // Reinforce the site name to Google Search (overrides Vercel platform branding)
+      "application-name": settings.hospitalName,
     },
   };
 }
