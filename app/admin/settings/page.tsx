@@ -43,7 +43,7 @@ export default function SettingsAdminPage() {
   const [phoneEmergency, setPhoneEmergency] = useState("+251 11 654 9999");
   const [ambulancePhone, setAmbulancePhone] = useState("+251 911 000 999");
   const [emailGeneral, setEmailGeneral] = useState("info@medhenbeza.com");
-  const [address, setAddress] = useState("Bole Sub-City, Next to Millennium Hall, Addis Ababa, Ethiopia");
+  const [address, setAddress] = useState("H73F+R49, Adama, Ethiopia");
   const [emergencyGate, setEmergencyGate] = useState("Gate 1 (Dedicated Ambulance & Emergency Driveway), Bole Road");
   const [emergencyHours, setEmergencyHours] = useState("Open 24 Hours · 7 Days a Week · All Holidays");
   const [visitingHours, setVisitingHours] = useState("Mon - Sun: 06:00 - 08:00, 12:00 - 14:00, 17:00 - 19:30");
@@ -64,7 +64,7 @@ export default function SettingsAdminPage() {
 
   // SEO & Meta Defaults
   const [metaTitle, setMetaTitle] = useState("Medhin Beza Hospital | Compassionate Care & Advanced Medicine");
-  const [metaDescription, setMetaDescription] = useState("Leading specialized tertiary hospital in Addis Ababa providing 24/7 emergency response, cardiology, and surgical care.");
+  const [metaDescription, setMetaDescription] = useState("Leading specialized tertiary hospital in Adama providing 24/7 emergency response, cardiology, and surgical care.");
 
   // Multilingual Localized Settings (Amharic)
   const [hospitalNameAm, setHospitalNameAm] = useState("");

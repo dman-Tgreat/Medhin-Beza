@@ -707,7 +707,7 @@ function mapCareer(car: any, locale: SupportedLocale = DEFAULT_LOCALE): CareerDe
     department: locDept?.name || locCar.department?.name || "Clinical Operations",
     departmentSlug: locDept?.slug || locCar.department?.slug || "general",
     type: empTypeMap[locCar.employmentType] || "Full-time",
-    location: locCar.location || "Addis Ababa, Ethiopia",
+    location: locCar.location || "Adama, Ethiopia",
     deadline: formatLocalizedDate(deadlineDate, locale),
     postedDate: formatLocalizedDate(createdDate, locale),
     overview: locCar.description || "Clinical opportunity at Medhin Beza Hospital.",

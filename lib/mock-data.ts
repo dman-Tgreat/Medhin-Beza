@@ -251,7 +251,7 @@ export const MOCK_ABOUT_PAGE: AboutPageData = {
   hero: {
     title: "About Medhin Beza",
     supportingText:
-      "Committed to clinical excellence, compassionate patient care, and modern medical standards for the Addis Ababa community and beyond.",
+      "Committed to clinical excellence, compassionate patient care, and modern medical standards for the Adama community and beyond.",
     image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Medhin Beza Hospital main medical facility",
   },
@@ -812,7 +812,7 @@ const MOCK_ABOUT_PAGE_LEGACY: AboutPageData = {
   hero: {
     title: "About Medhin Beza",
     supportingText:
-      "Committed to clinical excellence, compassionate patient care, and modern medical standards for the Addis Ababa community and beyond.",
+      "Committed to clinical excellence, compassionate patient care, and modern medical standards for the Adama community and beyond.",
     image: "",
     imageAlt: "Medhin Beza Hospital main medical facility",
   },
