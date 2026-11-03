@@ -79,6 +79,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
       apple: [{ url: "/apple-icon.png", type: "image/png" }],
     },
+    manifest: "/manifest.webmanifest",
     other: {
       "geo.region": "ET-OR",
       "geo.placename": "Adama",
